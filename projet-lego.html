@@ -1,0 +1,129 @@
+<!<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Robot LEGO - Raphaël CHAMPION</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+</head>
+<body>
+
+    <header class="barre-superieure">
+        <div class="bloc-logo"><span class="nom-site">Portfolio Raphaël CHAMPION</span></div>
+        <nav class="menu">
+            <a href="index.html#accueil" class="lien" data-section="accueil">Accueil</a>
+            
+            <div class="lien-conteneur-projets">
+                <a href="index.html#projets" class="lien actif projets" data-section="projets">Projets</a>
+                <div class="panel-projets">
+                    <a href="projet-vae.html">Vélo Assistance Électrique</a>
+                    <a href="projet-robot.html">Robot autonome</a>
+                    <a href="projet-lego.html">Robot LEGO Mindstorm</a>
+                    <a href="projet-alarme.html">Système d'alarme</a>
+                    <a href="projet-roomba.html">Projet Roomba</a>
+                </div>
+            </div>
+          
+            <a href="index.html#competences" class="lien" data-section="competences">Compétences</a>
+            <a href="index.html#savoirplus" class="lien" data-section="savoirplus">Contact & Bilan</a>
+            <div class="bulle"></div> 
+        </nav>
+    </header>
+
+    <div class="header-projet">
+        <h1>Robot LEGO Mindstorm 🧱</h1>
+        <p>Analyse et optimisation d'un robot pour une mission de récupération d'échantillons.</p>
+    </div>
+
+    <main class="contenu-projet" id="contenu">
+        <p class="introduction-projet">
+            Ce projet a été réalisé en classe de seconde. Mon rôle principal était de m'occuper des essais et de l'analyse des erreurs. L’objectif était de programmer un robot pour récupérer trois "échantillons de roche martienne" sur une plateforme avec des obstacles, atteindre une cible, puis revenir à sa zone de départ.
+        </p>
+
+        <h2>Démarche et Itérations</h2>
+        <p>
+            Au début, mon rôle consistait à tester le programme de mon coéquipier pour valider la trajectoire du robot. Les premiers essais ont montré que le robot n'atteignait pas les cibles ; je devais donc décomposer la trajectoire correcte en instructions simples (ex: "avancer de 50 cm", "tourner à 90°") que mon coéquipier intégrait ensuite dans son programme.
+        </p>
+        <p>
+            Rapidement, nous avons identifié plusieurs problèmes matériels. Pour améliorer la vitesse, nous avons remplacé les <strong>chaînes de traction par des roues</strong>. Ensuite, la pince d'origine n'était pas assez fiable et lâchait les échantillons ; nous l'avons donc changée pour un modèle plus performant. Enfin, après avoir remarqué des imprécisions dans les déplacements, des tests ont révélé qu'une <strong>roue était défectueuse</strong>, et son remplacement a grandement amélioré la fiabilité de la trajectoire.
+        </p>
+        
+        <h2>Résultats et Bilan</h2>
+        <p>
+            Le dernier défi a été le retour à la base. Nous avons opté pour une marche arrière afin de gagner du temps. Cependant, un léger déséquilibre dans la structure du robot causait parfois des déviations. Malgré cela, lors des tests finaux, le robot a réussi à accomplir la mission complète : récupérer les trois échantillons, éviter les obstacles, les déposer correctement dans la cible et revenir à la zone de départ.
+        </p>
+        <p>
+            Ce projet a été une excellente introduction à la résolution de problèmes en robotique. Il m'a permis de développer mes premières compétences en <strong>analyse d'erreurs</strong> (en distinguant les problèmes logiciels des problèmes matériels), en <strong>travail d’équipe</strong> et en <strong>persévérance</strong>, face aux nombreux cycles de tests et de corrections nécessaires pour atteindre l'objectif.
+        </p>
+
+        <div class="competences-list">
+            <h3>Compétences Développées sur ce Projet</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Compétence</th>
+                        <th>Détail de la compétence</th>
+                        <th>Niveau d’acquisition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Analyse des Erreurs</strong></td>
+                        <td>Identifier et diagnostiquer les sources de problèmes, qu'ils soient logiciels (trajectoire) ou matériels (roues, pince).</td>
+                        <td class="barre-cell">
+                            <div class="barre-progression" data-level="70"><div class="barre-interne"></div><span class="pourcentage">70%</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Travail d'équipe</strong></td>
+                        <td>Collaboration efficace avec une répartition claire des rôles (programmation vs tests et analyse) pour atteindre un but commun.</td>
+                        <td class="barre-cell">
+                            <div class="barre-progression" data-level="80"><div class="barre-interne"></div><span class="pourcentage">80%</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Persévérance</strong></td>
+                        <td>Maintenir la motivation et la rigueur à travers de multiples cycles de tests, d'échecs et de corrections.</td>
+                        <td class="barre-cell">
+                            <div class="barre-progression" data-level="85"><div class="barre-interne"></div><span class="pourcentage">85%</span></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h2>Détails du Projet (Vidéo)</h2>
+        <p>Voici un exemple vidéo d'un des derniers tests finaux, montrant le déroulement complet de la mission.</p>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ybdq9aemuQE" title="Démonstration du robot LEGO Mindstorm" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        
+    </main>
+
+    <footer class="vagues-footer">
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/rapha%C3%ABl-champion/" target="_blank" title="Mon profil LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="javascript:void(0)" onclick="copyToClipboard('champion.raphael77@gmail.com', 'Adresse e-mail copiée !')" title="Copier l'e-mail"><i class="fas fa-envelope"></i></a>
+            <a href="javascript:void(0)" onclick="copyToClipboard('0680115875', 'Numéro de téléphone copiée !')" title="Copier le numéro de téléphone"><i class="fas fa-phone"></i></a>
+            <a href="tous-les-projets.html" title="Voir tous les projets"><i class="fas fa-layer-group"></i></a>
+        </div>
+        <div class="vague-container">
+            <div class="vague vague1"></div>
+            <div class="vague vague2"></div>
+            <div class="vague vague3"></div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+
+    <script>
+      document.querySelector('.panel-projets a[href="projet-lego.html"]').style.display = 'none';
+    </script>
+
+</body>
+</html>

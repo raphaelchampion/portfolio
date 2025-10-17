@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Raphaël CHAMPION</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 
+</head>
+<body>
+
+  <header class="barre-superieure">
+    <div class="bloc-logo"><span class="nom-site">Portfolio Raphaël CHAMPION</span></div>
+    
+    <nav class="menu">
+      <a href="#accueil" class="lien actif" data-section="accueil">Accueil</a>
+      
+      <div class="lien-conteneur-projets">
+        <a href="#projets" class="lien projets" data-section="projets">Projets</a>
+        <div class="panel-projets">
+          <a href="projet-vae.html">Vélo Assistance Électrique</a>
+          <a href="projet-robot.html">Robot autonome</a>
+          <a href="projet-lego.html">Robot LEGO Mindstorm</a>
+          <a href="projet-alarme.html">Système d'alarme</a>
+          <a href="projet-roomba.html">Projet Roomba</a>
+        </div>
+      </div>
+      
+      <a href="#competences" class="lien" data-section="competences">Compétences</a>
+      <a href="#savoirplus" class="lien" data-section="savoirplus">Contact & Bilan</a>
+      <div class="bulle"></div>
+    </nav>
+  </header>
+
+  <main class="contenu-principal">
+    
+    <section id="accueil" class="section-contenu">
+      <h1>Bonjour, je suis Raphaël.</h1>
+      
+      <div class="a-propos-detail">
+    <p>
+        Tout a commencé par une fascination pour les systèmes complexes. Le frisson d'un simple voyage en TER se transformant en curiosité pour la signalisation par cantons ; la découverte de la Formule 1, révélant un monde de haute technologie et de stratégie ; ou encore la puissance de l'aéronavale, qui a pris une dimension concrète avec l'obtention de mon <strong>Brevet d’Initiation à l’Aéronautique (BIA)</strong>.
+    </p>
+    <p>
+        Ces passions m'ont naturellement guidé vers une question centrale : comment fonctionnent ces machines au plus profond d'elles-mêmes ? La réponse s'est éclaircie lors d'une discussion avec ma professeure de sciences de l'ingénieur. Le <strong>BUT Génie Électrique et Informatique Industrielle (GEII)</strong> est alors devenu une évidence. Aujourd'hui en <strong>deuxième année</strong>, spécialisé en <strong>Électricité et Maîtrise de l'Énergie (ÉMÉ)</strong>, je confirme chaque jour la pertinence de ce choix qui me donne les clés pour comprendre le cœur électrique de ces technologies.
+    </p>
+    <p>
+        Ce portfolio est le reflet de ce parcours. Des projets comme le <strong>Robot Autonome</strong> m'ont appris la persévérance face à des défis matériels frustrants, comme un moteur qui refuse de s'alimenter malgré un montage correct. Mais ils m'ont surtout apporté l'immense satisfaction de voir un système, que j'ai contribué à concevoir, prendre vie et fonctionner après des heures d'efforts.
+    </p>
+    <p>
+        Aujourd'hui, mon ambition est de passer de la théorie à la pratique. En tant qu'étudiant en parcours <strong>ÉMÉ</strong>, je recherche activement un stage, idéalement dans les secteurs <strong>aéronaval</strong> ou <strong>ferroviaire</strong>, pour enfin "voir concrètement comment ça fonctionne". Que ce soit en travaillant sur la conversion de puissance pour un système de traction, en participant à l'étude d'un réseau de distribution électrique ou en optimisant la gestion de l'énergie à bord, mon objectif est d'appliquer mes compétences là où je pourrai me sentir réellement utile, au cœur des domaines qui m'animent.
+    </p>
+</div>
+    </section>
+
+    <section id="projets" class="section-contenu">
+      <h2>Mes Projets Techniques</h2>
+      <div class="container-projets">
+        <article id="velo-vae" class="carte-projet"><h3>Vélo Assistance Électrique (VAE)</h3><p>Conception d'une carte de commande pour la variation de vitesse d'un moteur.</p><a href="projet-vae.html" class="btn-savoir-plus">Détails</a></article>
+        <article id="robot-autonome" class="carte-projet"><h3>Robot autonome</h3><p>Programmation d'un robot mobile avec modes manuel et autonome sur base Arduino.</p><a href="projet-robot.html" class="btn-savoir-plus">Détails</a></article>
+        <article id="robot-lego" class="carte-projet"><h3>Robot LEGO Mindstorm</h3><p>Analyse et optimisation d'un robot pour une mission de récupération d'échantillons.</p><a href="projet-lego.html" class="btn-savoir-plus">Détails</a></article>
+        <article id="alarme" class="carte-projet"><h3>Système d'alarme</h3><p>Conception de logique numérique sur Quartus pour un système de sécurité.</p><a href="projet-alarme.html" class="btn-savoir-plus">Détails</a></article>
+        <article id="roomba" class="carte-projet"><h3>Projet Roomba</h3><p>Conception d'un circuit de détection du vide avec capteurs et logique intégrée.</p><a href="projet-roomba.html" class="btn-savoir-plus">Détails</a></article>
+      </div>
+      <p class="voir-tout"><a href="tous-les-projets.html">Voir les fiches techniques complètes de mes projets &rarr;</a></p>
+    </section>
+
+    <section id="competences" class="section-contenu">
+      <h2>Compétences, Formations & Langues</h2>
+      
+      <div class="bloc-competences">
+        <div class="qualifications carte-unifiee">
+          <h3>Formations</h3>
+          <div class="carte-formation"><strong>Sept. 2024 - Aujourd'hui</strong><br>BUT GEII - Université Sorbonne Paris Nord<a href="https://www.google.fr/maps/place/Universit%C3%A9+Sorbonne+Paris+Nord/@48.9413323,2.3260798,13.8z/data=!4m6!3m5!1s0x47e66922af4c2e23:0xfe3113a781a13fca!8m2!3d48.956209!4d2.341461!16s%2Fm%2F027nkpg?entry=ttu&g_ep=EgoyMDI1MTAxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="emplacement-lien">📍 Voir l'emplacement</a></div>
+          <div class="carte-formation"><strong>Juin 2024</strong><br>Baccalauréat Général - Lycée Charles de Gaulle<a href="https://www.google.fr/maps/place/Lyc%C3%A9e+Charles+De+Gaulle/@49.0225468,2.4450627,11.97z/data=!4m6!3m5!1s0x47e622d9b54002bd:0x5b2053a646ec14e2!8m2!3d49.0478364!4d2.6685132!16s%2Fg%2F1tfk_hrc?entry=ttu&g_ep=EgoyMDI1MTAxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="emplacement-lien">📍 Voir l'emplacement</a></div>
+          <div class="carte-formation"><strong>Juin 2023</strong><br>Brevet d’Initiation à l’Aéronautique (BIA) - Lycée Charles de Gaulle<a href="https://www.google.fr/maps/place/Lyc%C3%A9e+Charles+De+Gaulle/@49.0225468,2.4450627,11.97z/data=!4m6!3m5!1s0x47e622d9b54002bd:0x5b2053a646ec14e2!8m2!3d49.0478364!4d2.6685132!16s%2Fg%2F1tfk_hrc?entry=ttu&g_ep=EgoyMDI1MTAxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="emplacement-lien">📍 Voir l'emplacement</a></div>
+        </div>
+        <div class="langues-progress carte-unifiee">
+            <h3>Langues</h3>
+            <div class="langue-bloc-carte"><div class="langue-item"><span class="langue-nom"><img src="https://flagcdn.com/w20/fr.png" alt="Drapeau Français" class="drapeau-svg"> Français (Maternelle)</span><div class="barre-progression langue-barre" data-level="100"><div class="barre-interne"></div><span class="pourcentage">100%</span></div></div></div>
+            <div class="langue-bloc-carte"><div class="langue-item"><span class="langue-nom"><img src="https://flagcdn.com/w20/gb.png" alt="Drapeau Royaume-Uni" class="drapeau-svg"> Anglais (Intermédiaire)</span><div class="barre-progression langue-barre" data-level="60"><div class="barre-interne"></div><span class="pourcentage">60%</span></div></div></div>
+            <div class="langue-bloc-carte"><div class="langue-item"><span class="langue-nom"><img src="https://flagcdn.com/w20/de.png" alt="Drapeau Allemagne" class="drapeau-svg"> Allemand (Débutant)</span><div class="barre-progression langue-barre" data-level="25"><div class="barre-interne"></div><span class="pourcentage">25%</span></div></div></div>
+        </div>
+      </div>
+      
+      <div class="competences-list">
+        <h3>🛠️ Hard Skills (Compétences Techniques)</h3>
+        <table>
+          <thead><tr><th>Compétence</th><th>Détail</th><th>Niveau Visuel</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Programmation Embarquée</strong></td><td>Programmation en C/C++ sur Arduino, gestion de capteurs (ultrasons, IR) et d'actionneurs (moteurs, servomoteurs).</td><td class="barre-cell"><div class="barre-progression" data-level="70"><div class="barre-interne"></div><span class="pourcentage">70%</span></div></td></tr>
+            <tr><td><strong>Conception de Logique Numérique</strong></td><td>Utilisation de Quartus, tables de vérité, Karnaugh et schémas logiques pour concevoir des systèmes.</td><td class="barre-cell"><div class="barre-progression" data-level="75"><div class="barre-interne"></div><span class="pourcentage">75%</span></div></td></tr>
+            <tr><td><strong>Électronique Analogique & de Puissance</strong></td><td>Mise en œuvre de hacheurs, AOP (LM358), oscillateurs (4093) et contrôleurs PWM (SG3525).</td><td class="barre-cell"><div class="barre-progression" data-level="65"><div class="barre-interne"></div><span class="pourcentage">65%</span></div></td></tr>
+            <tr><td><strong>Instrumentation & Mesures</strong></td><td>Maîtrise de l'oscilloscope, multimètre et alimentation stabilisée pour l'analyse de signaux et de circuits.</td><td class="barre-cell"><div class="barre-progression" data-level="80"><div class="barre-interne"></div><span class="pourcentage">80%</span></div></td></tr>
+            <tr><td><strong>Analyse de Schémas & Datasheets</strong></td><td>Interprétation de documentation technique et montage pratique de circuits sur plaque d'essai.</td><td class="barre-cell"><div class="barre-progression" data-level="85"><div class="barre-interne"></div><span class="pourcentage">85%</span></div></td></tr>
+            <tr><td><strong>Soudure & Prototypage</strong></td><td>Expérience pratique de la soudure de composants traversants et assemblage de prototypes fonctionnels.</td><td class="barre-cell"><div class="barre-progression" data-level="60"><div class="barre-interne"></div><span class="pourcentage">60%</span></div></td></tr>
+            <tr><td><strong>Langages de programmation</strong></td><td>Notions en Python pour des scripts simples et en développement web (HTML/CSS).</td><td class="barre-cell"><div class="barre-progression" data-level="50"><div class="barre-interne"></div><span class="pourcentage">50%</span></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="competences-list">
+        <h3>🤝 Soft Skills (Compétences Comportementales)</h3>
+        <table class="soft-skills-table">
+            <thead><tr><th>Compétence</th><th>Mise en application</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Autonomie & Initiative</strong></td><td>Organisation du travail, priorisation des tâches et recherche de solutions sans consignes détaillées.</td></tr>
+                <tr><td><strong>Travail d'équipe</strong></td><td>Collaboration efficace, communication et répartition des tâches dans des projets de groupe.</td></tr>
+                <tr><td><strong>Résolution de Problèmes</strong></td><td>Analyse des erreurs (logicielles et matérielles) et persévérance pour trouver des solutions fonctionnelles.</td></tr>
+                <tr><td><strong>Gestion de Projet</strong></td><td>Utilisation d'outils de planification (Gantt) et rédaction de documentation technique (cahier des charges).</td></tr>
+                <tr><td><strong>Adaptabilité</strong></td><td>Capacité à faire face aux imprévus techniques (pannes, composants défectueux) et à ajuster la stratégie.</td></tr>
+            </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="savoirplus" class="section-contenu">
+      <h2>Contact & Ressources</h2>
+      <div class="container-contact">
+        <article class="carte-contact"><h3>Mes Coordonnées 📞</h3><p><strong>Email :</strong> champion.raphael77@gmail.com</p><p><strong>Téléphone :</strong> 06 80 11 58 75</p><p><strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/rapha%C3%ABl-champion/" target="_blank">Profil Raphaël CHAMPION</a></p></article>
+        <article class="carte-contact"><h3>Mon Curriculum Vitae 📄</h3><p>Pour en savoir plus sur <strong>mon parcours d'études</strong> :</p><a href="https://drive.google.com/file/d/1y8KTVA4JcWvVvBL-kASwsmaJNndRupWW/view?usp=sharing" target="_blank" class="btn-telecharger">Télécharger mon CV (PDF)</a></article>
+        <article class="carte-contact"><h3>Formulaire de contact 📧</h3><p>Me contacter directement via un formulaire en ligne dédié :</p><a href="contact-form.html" class="btn-savoir-plus">Accéder au Formulaire</a></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="vagues-footer">
+    <div class="footer-links">
+        <a href="https://www.linkedin.com/in/rapha%C3%ABl-champion/" target="_blank" title="Mon profil LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="javascript:void(0)" onclick="copyToClipboard('champion.raphael77@gmail.com', 'Adresse e-mail copiée !')" title="Copier l'e-mail"><i class="fas fa-envelope"></i></a>
+        <a href="javascript:void(0)" onclick="copyToClipboard('0680115875', 'Numéro de téléphone copiée !')" title="Copier le numéro de téléphone"><i class="fas fa-phone"></i></a>
+        <a href="tous-les-projets.html" title="Voir tous les projets"><i class="fas fa-layer-group"></i></a>
+    </div>
+    <div class="vague-container">
+        <div class="vague vague1"></div>
+        <div class="vague vague2"></div>
+        <div class="vague vague3"></div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

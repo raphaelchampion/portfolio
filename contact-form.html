@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Raphaël CHAMPION</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 
+</head>
+<body>
+
+    <header class="barre-superieure">
+        <div class="bloc-logo"><span class="nom-site">Portfolio Raphaël CHAMPION</span></div>
+        <nav class="menu">
+            <a href="index.html#accueil" class="lien" data-section="accueil">Accueil</a>
+            
+            <div class="lien-conteneur-projets">
+                <a href="index.html#projets" class="lien projets" data-section="projets">Projets</a>
+                <div class="panel-projets">
+                    <a href="projet-vae.html">Vélo Assistance Électrique</a>
+                    <a href="projet-robot.html">Robot autonome</a>
+                    <a href="projet-lego.html">Robot LEGO Mindstorm</a>
+                    <a href="projet-alarme.html">Système d'alarme</a>
+                    <a href="projet-roomba.html">Projet Roomba</a>
+                </div>
+            </div>
+          
+            <a href="index.html#competences" class="lien" data-section="competences">Compétences</a>
+            <a href="index.html#savoirplus" class="lien actif" data-section="savoirplus">Contact & Bilan</a>
+            <div class="bulle"></div> 
+        </nav>
+    </header>
+
+    <div class="header-projet">
+        <h1>Me Contacter 📧</h1>
+        <p>Une question, une proposition de stage ou un simple échange ? N'hésitez pas à utiliser le formulaire ci-dessous.</p>
+    </div>
+
+    <main class="contenu-projet">
+        <div class="carte-unifiee">
+            <form id="contact-form" class="formulaire-contact" action="https://formspree.io/f/xqayndgk" method="POST">
+                
+                <div class="form-group">
+                    <label for="name">Votre Nom</label>
+                    <input type="text" id="name" name="name" required placeholder="Ex: Jean Dupont">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Votre Adresse E-mail</label>
+                    <input type="email" id="email" name="email" required placeholder="Ex: jean.dupont@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Votre Message</label>
+                    <textarea id="message" name="message" rows="8" required placeholder="Bonjour, je vous contacte concernant..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn-envoyer">Envoyer le Message</button>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <footer class="vagues-footer">
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/rapha%C3%ABl-champion/" target="_blank" title="Mon profil LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="javascript:void(0)" onclick="copyToClipboard('champion.raphael77@gmail.com', 'Adresse e-mail copiée !')" title="Copier l'e-mail">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="javascript:void(0)" onclick="copyToClipboard('0680115875', 'Numéro de téléphone copiée !')" title="Copier le numéro de téléphone">
+                <i class="fas fa-phone"></i>
+            </a>
+            <a href="tous-les-projets.html" title="Voir tous les projets">
+                <i class="fas fa-layer-group"></i> 
+            </a>
+        </div>
+        <div class="vague-container">
+            <div class="vague vague1"></div>
+            <div class="vague vague2"></div>
+            <div class="vague vague3"></div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+
+</body>
+</html>

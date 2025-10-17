@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Roomba - Raphaël CHAMPION</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+</head>
+<body>
+
+    <header class="barre-superieure">
+        <div class="bloc-logo"><span class="nom-site">Portfolio Raphaël CHAMPION</span></div>
+        <nav class="menu">
+            <a href="index.html#accueil" class="lien" data-section="accueil">Accueil</a>
+            <div class="lien-conteneur-projets">
+                <a href="index.html#projets" class="lien actif projets" data-section="projets">Projets</a>
+                <div class="panel-projets">
+                    <a href="projet-vae.html">Vélo Assistance Électrique</a>
+                    <a href="projet-robot.html">Robot autonome</a>
+                    <a href="projet-lego.html">Robot LEGO Mindstorm</a>
+                    <a href="projet-alarme.html">Système d'alarme</a>
+                    <a href="projet-roomba.html">Projet Roomba</a>
+                </div>
+            </div>
+            <a href="index.html#competences" class="lien" data-section="competences">Compétences</a>
+            <a href="index.html#savoirplus" class="lien" data-section="savoirplus">Contact & Bilan</a>
+            <div class="bulle"></div> 
+        </nav>
+    </header>
+
+    <div class="header-projet">
+        <h1>Projet Détection du Vide (Type Roomba) 🧹</h1>
+        <p>Conception d'un circuit de détection du vide avec capteurs et logique intégrée.</p>
+    </div>
+
+    <main class="contenu-projet" id="contenu">
+        <p class="introduction-projet">
+            Réalisé en binôme en première année de BUT GEII, ce projet avait pour objectif de concevoir le bloc de détection du vide pour un robot aspirateur. La démarche comprenait une première phase d'expérimentation avec Arduino, suivie de la conception et du câblage d'un circuit électronique analogique plus complexe.
+        </p>
+
+        <h2>Première Approche : Arduino et Capteur Ultrason</h2>
+        <p>
+            La première étape consistait à prototyper la logique de détection avec une carte <strong>Arduino</strong> et un <strong>capteur à ultrasons</strong>. Le but était de valider rapidement le concept en allumant des LEDs en fonction de la distance mesurée, simulant ainsi la détection d'un obstacle ou du vide.
+        </p>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/XIlf_kQfJb8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        <h2>Conception du Circuit Analogique et Défis</h2>
+        <p>
+            La partie principale du projet impliquait le câblage d'un circuit analogique complexe sur plaque d'essai. Nous avons d'abord créé un <strong>oscillateur</strong> (avec un circuit 4093), puis intégré un <strong>optocoupleur (CNY70)</strong> pour la détection. Cette étape a nécessité de consulter la <strong>datasheet</strong> du composant pour adapter le câblage. De nouvelles difficultés sont apparues avec le circuit <strong>LM2907</strong> (convertisseur fréquence-tension), dont le fonctionnement imprévisible a nécessité de nombreuses reprises du montage.
+        </p>
+        
+        <h2>Conclusion et Apprentissages</h2>
+        <p>
+            Bien que la détection finale n'ait pas pu être visualisée de manière stable, ce projet a été extrêmement formateur. Il a permis de développer des compétences concrètes en <strong>montage pratique</strong>, en <strong>utilisation de datasheets</strong>, et en <strong>maîtrise de l'oscilloscope</strong> pour l'analyse de signaux.
+        </p>
+
+        <div class="competences-list">
+            <h3>Compétences Développées sur ce Projet</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Compétence</th>
+                        <th>Détail de la compétence</th>
+                        <th>Niveau d’acquisition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Maîtrise de l'Oscilloscope</strong></td>
+                        <td>Utilisation avancée pour visualiser et analyser des signaux.</td>
+                        <td class="barre-cell">
+                            <div class="barre-progression" data-level="85"><div class="barre-interne"></div><span class="pourcentage">85%</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Montage de Circuits Pratiques</strong></td>
+                        <td>Câblage de circuits analogiques complexes sur plaque d'essai.</td>
+                        <td class="barre-cell">
+                            <div class="barre-progression" data-level="80"><div class="barre-interne"></div><span class="pourcentage">80%</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Analyse de Datasheets</strong></td>
+                        <td>Utilisation de fiches techniques pour adapter un montage.</td>
+                        <td class="barre-cell">
+                            <div class="barre-progression" data-level="75"><div class="barre-interne"></div><span class="pourcentage">75%</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Programmation Arduino</strong></td>
+                        <td>Prototypage d'une logique de détection avec capteurs.</td>
+                        <td class="barre-cell">
+                            <div class="barre-progression" data-level="70"><div class="barre-interne"></div><span class="pourcentage">70%</span></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Détails du Projet (Code, Schéma & Vidéo)</h2>
+        <p>Voici le schéma simplifié utilisé pour le montage, le code Arduino de la phase de prototypage, et une vidéo du résultat final.</p>
+
+        <img src="images/RO_I_SCHEMA.png" alt="Schéma électrique simplifié de la détection du vide">
+
+        <pre><code class="language-cpp">// Définition des broches
+#define trigPin 9     // Broche TRIG du capteur ultrason
+#define echoPin 10    // Broche ECHO du capteur ultrason
+#define RedLed 11     // LED rouge (vide)
+#define greenLed 12   // LED verte (obstacle)
+
+void setup() {
+    Serial.begin(9600);
+    pinMode(trigPin, OUTPUT);
+    pinMode(echoPin, INPUT);
+    pinMode(RedLed, OUTPUT);
+    pinMode(greenLed, OUTPUT);
+}
+
+void loop() {
+    long duration, distance;
+
+    // Envoi d'une impulsion ultrasonique
+    digitalWrite(trigPin, LOW);
+    delayMicroseconds(2);
+    digitalWrite(trigPin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(trigPin, LOW);
+
+    // Mesure du temps de retour de l'écho
+    duration = pulseIn(echoPin, HIGH);
+    // Calcul de la distance
+    distance = (duration * 0.034) / 2;
+
+    // Allumage des LEDs selon la distance
+    if (distance < 10 || distance >= 400) { // Obstacle détecté
+        digitalWrite(RedLed, LOW);
+        digitalWrite(greenLed, HIGH);
+    } else { // Pas d'obstacle (vide)
+        digitalWrite(RedLed, HIGH);
+        digitalWrite(greenLed, LOW);
+    }
+    delay(200);
+}</code></pre>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VU6Z-X3h1pg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    </main>
+
+    <footer class="vagues-footer">
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/rapha%C3%ABl-champion/" target="_blank" title="Mon profil LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="javascript:void(0)" onclick="copyToClipboard('champion.raphael77@gmail.com', 'Adresse e-mail copiée !')" title="Copier l'e-mail"><i class="fas fa-envelope"></i></a>
+            <a href="javascript:void(0)" onclick="copyToClipboard('0680115875', 'Numéro de téléphone copiée !')" title="Copier le numéro de téléphone"><i class="fas fa-phone"></i></a>
+            <a href="tous-les-projets.html" title="Voir tous les projets"><i class="fas fa-layer-group"></i></a>
+        </div>
+        <div class="vague-container">
+            <div class="vague vague1"></div>
+            <div class="vague vague2"></div>
+            <div class="vague vague3"></div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>document.querySelector('.panel-projets a[href="projet-roomba.html"]').style.display = 'none';</script>
+
+</body>
+</html>

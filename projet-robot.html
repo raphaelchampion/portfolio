@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Robot Autonome - Raphaël CHAMPION</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+</head>
+<body>
+
+    <header class="barre-superieure">
+        <div class="bloc-logo"><span class="nom-site">Portfolio Raphaël CHAMPION</span></div>
+        <nav class="menu">
+            <a href="index.html#accueil" class="lien" data-section="accueil">Accueil</a>
+            
+            <div class="lien-conteneur-projets">
+                <a href="index.html#projets" class="lien actif projets" data-section="projets">Projets</a>
+                <div class="panel-projets">
+                    <a href="projet-vae.html">Vélo Assistance Électrique</a>
+                    <a href="projet-robot.html">Robot autonome</a>
+                    <a href="projet-lego.html">Robot LEGO Mindstorm</a>
+                    <a href="projet-alarme.html">Système d'alarme</a>
+                    <a href="projet-roomba.html">Projet Roomba</a>
+                </div>
+            </div>
+          
+            <a href="index.html#competences" class="lien" data-section="competences">Compétences</a>
+            <a href="index.html#savoirplus" class="lien" data-section="savoirplus">Contact & Bilan</a>
+            <div class="bulle"></div> 
+        </nav>
+    </header>
+
+    <div class="header-projet">
+        <h1>Robot Autonome 🤖</h1>
+        <p>Programmation d'un robot mobile avec modes manuel et autonome sur base Arduino.</p>
+    </div>
+
+    <main class="contenu-projet" id="contenu">
+    
+        <p class="introduction-projet">
+            Ce projet a été réalisé en première année de BUT GEII, en groupe de trois étudiants. L’objectif principal était de concevoir un robot capable de se déplacer de deux manières : en mode automatique, où il évolue de manière autonome, et en mode manuel, contrôlé via une télécommande. Comparé aux projets précédents, nous avons bénéficié d’une plus grande autonomie. On nous a fourni une base et un objectif précis, mais sans directives détaillées, ce qui nous a permis d’organiser notre travail et de choisir notre propre approche.
+        </p>
+
+        <h2>Démarche et Approche du Projet</h2>
+        <p>
+            Ce projet a été bien différent des précédents : contrairement aux projets encadrés par des questions guidées, ici, on a été immédiatement plongés dans une approche beaucoup plus <strong>autonome</strong>. Nous avions un objectif clair, des documents de référence et quelques ressources, mais aucune question intermédiaire pour nous orienter. Cela nous a forcés à organiser notre travail de manière plus indépendante, à choisir nous-mêmes l’ordre des étapes, et à apprendre en grande partie par l’expérimentation.
+        </p>
+        <p>
+            Dès le début, j’ai pris le rôle de secrétaire du groupe, en m’occupant des documents techniques. J’ai notamment réalisé le <strong>diagramme de Gantt</strong> pour visualiser la planification du projet, le <strong>cahier des charges fonctionnel</strong>, ainsi que d’autres documents comme des <strong>analyses fonctionnelles</strong>, souvent un peu fastidieuses, mais essentielles pour cadrer le projet et définir clairement les besoins. Une fois cette partie terminée, j’ai progressivement rejoint mes coéquipiers sur les tests et la programmation du robot.
+        </p>
+        
+        <h2>Développement et Difficultés Techniques</h2>
+        <p>
+            Le robot devait pouvoir fonctionner en <strong>deux modes</strong> : un <strong>mode manuel</strong>, où il est contrôlé via une télécommande infrarouge, et un <strong>mode autonome</strong>, dans lequel il détecte les obstacles grâce à un capteur à ultrasons monté sur un servomoteur, analyse son environnement, puis adapte sa trajectoire.
+        </p>
+        <p>
+            Nous avons d’abord testé séparément les différents modules fournis en ressources : réception des signaux infrarouges, contrôle directionnel par télécommande, déplacement automatique, gestion du servomoteur et détection d’obstacles. L’étape suivante a été de <strong>fusionner ces codes</strong> en un seul programme combinant les deux modes. C’est à ce moment-là que les principales difficultés sont apparues. D’une part, sur le plan logiciel, la gestion des différents états du robot s'est révélée complexe. D’autre part, nous avons rencontré un problème matériel majeur : une <strong>tension très insuffisante sur les moteurs</strong>, malgré une double alimentation. Les moteurs ne recevaient que 0,1 à 0,2V, ce qui les empêchait complètement de tourner. Le problème semblait parfois se résoudre sans explication claire, ce qui a grandement compliqué nos tests.
+        </p>
+        
+        <h2>Bilan et Compétences Acquises</h2>
+        <p>
+            Malgré tout, nous avons pu expérimenter plusieurs programmes complets. L’intégration stable des deux modes dans un même programme reste un <strong>défi en cours</strong>. Ce projet m’a permis d’acquérir de <strong>nombreuses compétences</strong>, à la fois en gestion de projet, en rédaction technique, en <strong>programmation embarquée sur Arduino</strong>, et surtout en <strong>résolution de problèmes matériels</strong>, dans un contexte où l’explication n’est pas toujours évidente. Il m’a aussi appris à travailler de manière plus autonome, avec une vraie liberté dans l’organisation des tâches et la recherche de solutions.
+        </p>
+        
+        <div class="competences-list">
+            <h3>Compétences Développées sur ce Projet</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Compétence</th>
+                        <th>Détail de la compétence</th>
+                        <th>Niveau d’acquisition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Gestion de projet</strong></td>
+                        <td>Réalisation d'un diagramme de Gantt pour planifier et suivre l’avancement. Organisation des tâches de l'équipe.</td>
+                        <td class="barre-cell">
+                            <div class="barre-progression" data-level="80"><div class="barre-interne"></div><span class="pourcentage">80%</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Rédaction de documents techniques</strong></td>
+                        <td>Rédaction de documents formels (cahier des charges fonctionnel, analyses) essentiels à la structuration du projet.</td>
+                        <td class="barre-cell">
+                            <div class="barre-progression" data-level="85"><div class="barre-interne"></div><span class="pourcentage">85%</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Programmation sur Arduino</strong></td>
+                        <td>Correction, amélioration et fusion de codes en langage Arduino pour gérer les différents modules du robot.</td>
+                        <td class="barre-cell">
+                            <div class="barre-progression" data-level="65"><div class="barre-interne"></div><span class="pourcentage">65%</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Résolution de problèmes techniques</strong></td>
+                        <td>Tests et diagnostics pour corriger des erreurs de calibration et des pannes matérielles complexes (alimentation des moteurs).</td>
+                        <td class="barre-cell">
+                            <div class="barre-progression" data-level="70"><div class="barre-interne"></div><span class="pourcentage">70%</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Interprétation de documentation</strong></td>
+                        <td>Consultation de datasheets pour assembler et câbler correctement les composants (moteurs, capteurs, carte de puissance).</td>
+                        <td class="barre-cell">
+                            <div class="barre-progression" data-level="80"><div class="barre-interne"></div><span class="pourcentage">80%</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Autonomie et prise d’initiative</strong></td>
+                        <td>Organisation du travail, priorisation des étapes et recherche de solutions sans consignes détaillées.</td>
+                        <td class="barre-cell">
+                            <div class="barre-progression" data-level="85"><div class="barre-interne"></div><span class="pourcentage">85%</span></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Détails du Projet (Vidéo & Image)</h2>
+        <p>Découvrez ci-dessous une démonstration du robot en action, ainsi qu'une photo de son montage final.</p>
+        
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/1qQegfwWvF4" title="Démonstration du robot autonome" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        
+        <img src="images/RA_I_FINAL.jpeg" alt="Photo du montage final du robot autonome">
+
+    </main>
+
+    <footer class="vagues-footer">
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/rapha%C3%ABl-champion/" target="_blank" title="Mon profil LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="javascript:void(0)" onclick="copyToClipboard('champion.raphael77@gmail.com', 'Adresse e-mail copiée !')" title="Copier l'e-mail"><i class="fas fa-envelope"></i></a>
+            <a href="javascript:void(0)" onclick="copyToClipboard('0680115875', 'Numéro de téléphone copiée !')" title="Copier le numéro de téléphone"><i class="fas fa-phone"></i></a>
+            <a href="tous-les-projets.html" title="Voir tous les projets"><i class="fas fa-layer-group"></i></a>
+        </div>
+        <div class="vague-container">
+            <div class="vague vague1"></div>
+            <div class="vague vague2"></div>
+            <div class="vague vague3"></div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+
+    <script>
+      document.querySelector('.panel-projets a[href="projet-robot.html"]').style.display = 'none';
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet VAE - Raphaël CHAMPION</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+</head>
+<body>
+
+    <header class="barre-superieure">
+        <div class="bloc-logo"><span class="nom-site">Portfolio Raphaël CHAMPION</span></div>
+        <nav class="menu">
+            <a href="index.html#accueil" class="lien" data-section="accueil">Accueil</a>
+            
+            <div class="lien-conteneur-projets">
+                <a href="index.html#projets" class="lien actif projets" data-section="projets">Projets</a>
+                <div class="panel-projets">
+                    <a href="projet-vae.html">Vélo Assistance Électrique</a>
+                    <a href="projet-robot.html">Robot autonome</a>
+                    <a href="projet-lego.html">Robot LEGO Mindstorm</a>
+                    <a href="projet-alarme.html">Système d'alarme</a>
+                    <a href="projet-roomba.html">Projet Roomba</a>
+                </div>
+            </div>
+          
+            <a href="index.html#competences" class="lien" data-section="competences">Compétences</a>
+            <a href="index.html#savoirplus" class="lien" data-section="savoirplus">Contact & Bilan</a>
+            <div class="bulle"></div> 
+        </nav>
+    </header>
+
+    <div class="header-projet">
+        <h1>Vélo à Assistance Électrique (VAE) 🚲</h1>
+        <p>Conception d'une carte de commande pour la variation de vitesse d'un moteur à courant continu.</p>
+    </div>
+
+    <main class="contenu-projet" id="contenu">
+        <p class="introduction-projet">
+            Ce projet a été réalisé en première année de BUT GEII, en groupe de trois. L’objectif était de concevoir une carte électronique permettant la variation de la vitesse d’un moteur à courant continu. Nous avons d'abord étudié le moteur, puis simulé la variation de vitesse avant de réaliser la carte avec sa partie commande et sa partie puissance. Ce projet nous a permis de mettre en pratique plusieurs compétences acquises en cours, comme la lecture de schémas, la simulation et la soudure de composants.
+        </p>
+
+        <h2>Contexte et Démarche Pédagogique</h2>
+        <p>
+            Pour ce troisième projet de l’année, nous avons été amenés à concevoir un système de motorisation pour un vélo à assistance électrique. Ce projet s’inscrivait dans une démarche à la fois écologique et technique, combinant des compétences fondamentales de notre formation, notamment en <strong>électronique de puissance</strong>, en systèmes embarqués et en instrumentation.
+        </p>
+        <p>
+            L’objectif était de mieux comprendre le fonctionnement d’un moteur à courant continu et d’étudier le pilotage de la vitesse via un montage à <strong>hacheur série</strong>. L’approche pédagogique se faisait sous forme de questions guidées, nous poussant à réfléchir par nous-mêmes à chaque étape, tout en étant encadrés.
+        </p>
+        
+        <h2>Mise en Œuvre et Bilan</h2>
+        <p>
+            Nous avons commencé par <strong>souder plusieurs composants</strong> sur une carte (résistances, condensateurs, diodes), puis nous avons analysé les différents blocs du système : la partie puissance et la partie commande. Par la suite, nous avons appris à faire varier le <strong>rapport cyclique</strong> d’un signal <strong>PWM</strong>, ce qui permet de moduler la tension moyenne appliquée au moteur et donc sa vitesse.
+        </p>
+        <p>
+            Ce projet m’a permis de mieux appréhender le fonctionnement global d’un moteur électrique et de me familiariser avec les bases du pilotage par hacheur, tout en continuant à développer mes compétences pratiques en soudure, en lecture de schémas électroniques et en analyse de circuits.
+        </p>
+
+        <div class="competences-list">
+            <h3>Compétences Développées sur ce Projet</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Compétence</th>
+                        <th>Détail de la compétence</th>
+                        <th>Niveau d’acquisition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Soudure de composants</strong></td>
+                        <td>Soudure de composants traversants (résistances, diodes, etc.) sur une carte électronique prêtée.</td>
+                        <td class="barre-cell">
+                            <div class="barre-progression" data-level="60"><div class="barre-interne"></div><span class="pourcentage">60%</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Connaissance des composants</strong></td>
+                        <td>Utilisation et soudure de composants spécifiques comme le contrôleur PWM SG3525 et un hacheur de puissance.</td>
+                        <td class="barre-cell">
+                            <div class="barre-progression" data-level="75"><div class="barre-interne"></div><span class="pourcentage">75%</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Réalisation de cartes électroniques</strong></td>
+                        <td>Assemblage et tests fonctionnels des cartes de commande (logique PWM) et de puissance (hacheur).</td>
+                        <td class="barre-cell">
+                            <div class="barre-progression" data-level="65"><div class="barre-interne"></div><span class="pourcentage">65%</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Résolution de problèmes techniques</strong></td>
+                        <td>Réalisation de tests de fonctionnement sur le système motorisé pour valider chaque étape du montage.</td>
+                        <td class="barre-cell">
+                            <div class="barre-progression" data-level="70"><div class="barre-interne"></div><span class="pourcentage">70%</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Rédaction de documents techniques</strong></td>
+                        <td>Utilisation d’outils collaboratifs (Google Docs, Slides) pour le suivi et la présentation du compte-rendu.</td>
+                        <td class="barre-cell">
+                            <div class="barre-progression" data-level="80"><div class="barre-interne"></div><span class="pourcentage">80%</span></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h2>Détails du Projet (Vidéo & Image)</h2>
+        <p>Découvrez le système en action et le montage de la carte électronique :</p>
+        
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/o7qeu-LudkM" title="Démonstration VAE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        
+        <img src="images/VA_I_FINAL.jpg" alt="Montage final de la carte de commande VAE">
+
+    </main>
+
+    <footer class="vagues-footer">
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/rapha%C3%ABl-champion/" target="_blank" title="Mon profil LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="javascript:void(0)" onclick="copyToClipboard('champion.raphael77@gmail.com', 'Adresse e-mail copiée !')" title="Copier l'e-mail"><i class="fas fa-envelope"></i></a>
+            <a href="javascript:void(0)" onclick="copyToClipboard('0680115875', 'Numéro de téléphone copiée !')" title="Copier le numéro de téléphone"><i class="fas fa-phone"></i></a>
+            <a href="tous-les-projets.html" title="Voir tous les projets"><i class="fas fa-layer-group"></i></a>
+        </div>
+        <div class="vague-container">
+            <div class="vague vague1"></div>
+            <div class="vague vague2"></div>
+            <div class="vague vague3"></div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+
+    <script>
+      document.querySelector('.panel-projets a[href="projet-vae.html"]').style.display = 'none';
+    </script>
+
+</body>
+</html>

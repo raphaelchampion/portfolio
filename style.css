@@ -1,0 +1,679 @@
+/* ---------------------------------------------------- */
+/* 11. DESIGN GLOBAL & RESET */
+/* ---------------------------------------------------- */
+:root {
+    --couleur-fond-principal: #f8f8f8; 
+    --couleur-fond-bloc: #ffffff;      
+    --couleur-texte: #1c1c1c;           
+    --couleur-primaire: #1e90ff;       
+    
+    --couleur-seuil-faible: #ff4500; 
+    --couleur-seuil-moyen: #1e90ff; 
+    --couleur-seuil-eleve: #228b22;
+    --hauteur-nav: 105px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease-in-out; 
+}
+
+body, html {
+    font-family: 'Inter', sans-serif;
+    color: var(--couleur-texte);
+    line-height: 1.8; 
+    scroll-behavior: smooth;
+}
+
+html {
+    background-color: var(--couleur-fond-principal);
+}
+
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0; 
+    width: 10px; 
+    height: 0; 
+    background-color: rgba(30, 144, 255, 0.6);
+    z-index: 99; 
+    transition: height 0.1s linear;
+}
+
+/* ---------------------------------------------------- */
+/* 3. HEADER & NAVIGATION */
+/* ---------------------------------------------------- */
+.barre-superieure {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--couleur-fond-bloc);
+    height: var(--hauteur-nav);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 100; 
+    transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+.bloc-logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: var(--hauteur-nav);
+    width: 280px; 
+    background: var(--couleur-texte); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s ease-in-out, opacity 0.3s ease;
+}
+
+.nom-site {
+    color: white;
+    font-weight: bold;
+    font-size: 1.4rem;
+    padding-left: 20px; 
+}
+
+.menu {
+    display: flex;
+    gap: 40px;
+    position: relative;
+    height: 100%;
+}
+
+.lien {
+    position: relative;
+    text-decoration: none;
+    color: var(--couleur-texte);
+    font-weight: bold;
+    padding: 0 15px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.bulle {
+    position: absolute;
+    bottom: 20px;
+    height: 4px;
+    width: 0;
+    background: var(--couleur-texte); 
+    border-radius: 2px;
+    transition: all 0.4s ease-in-out; 
+    z-index: 1;
+}
+
+.lien-conteneur-projets {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.panel-projets {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none; 
+    background: var(--couleur-fond-bloc);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    padding: 10px 0;
+    min-width: 240px;
+    flex-direction: column;
+    z-index: 50;
+    pointer-events: none; 
+}
+
+.lien-conteneur-projets:hover .panel-projets,
+.panel-projets:hover {
+    display: flex;
+    pointer-events: all; 
+}
+
+.panel-projets a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--couleur-texte);
+    font-weight: 500;
+}
+
+.panel-projets a:hover {
+    background: var(--couleur-fond-principal);
+    color: var(--couleur-primaire);
+}
+
+/* ---------------------------------------------------- */
+/* MAIN CONTENT & SECTIONS */
+/* ---------------------------------------------------- */
+.contenu-principal {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 80px 40px 80px;
+    padding-bottom: 0; 
+}
+
+.section-contenu {
+    padding: 80px 0;
+    min-height: 80vh; 
+}
+
+.a-propos-detail p {
+    text-align: justify;
+    margin-bottom: 25px;
+    font-size: 1.1rem; 
+}
+
+.section-contenu p, .section-contenu li {
+    font-size: 1.05rem;
+}
+
+.container-projets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.carte-projet {
+    background-color: var(--couleur-fond-bloc);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transform: translateY(0);
+}
+
+.carte-projet:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.btn-savoir-plus {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--couleur-primaire);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ---------------------------------------------------- */
+/* 8. SECTION COMPÉTENCES */
+/* ---------------------------------------------------- */
+.bloc-competences {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.carte-unifiee {
+    padding: 20px;
+    background: var(--couleur-fond-bloc);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+}
+
+.qualifications .carte-formation {
+    padding: 15px 0;
+    margin-bottom: 5px;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+}
+
+.qualifications .carte-formation strong {
+    font-size: 1.1rem;
+    color: var(--couleur-texte);
+    margin-bottom: 5px;
+}
+
+.emplacement-lien {
+    margin-top: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--couleur-primaire);
+    font-size: 0.95em;
+    align-self: flex-start;
+}
+
+.langues-progress {
+    padding: 20px; 
+}
+
+.langue-bloc-carte {
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    border: 1px solid var(--couleur-fond-principal); 
+}
+
+.langue-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.drapeau-svg {
+    width: 25px;
+    height: auto;
+    margin-right: 8px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    vertical-align: middle;
+}
+
+.langue-nom {
+    display: inline-block;
+    width: 35%;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.barre-progression.langue-barre {
+    width: 60%;
+    height: 18px; 
+}
+
+.competences-list {
+    margin-bottom: 50px;
+}
+
+.competences-list h3 {
+    margin-bottom: 20px;
+    color: var(--couleur-texte);
+}
+
+.competences-list table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--couleur-fond-bloc);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.competences-list th, 
+.competences-list td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--couleur-fond-principal);
+}
+
+.competences-list td:first-child {
+    font-weight: 500;
+}
+
+.competences-list th:nth-child(3), 
+.competences-list td:nth-child(3) {
+    width: 25%;
+}
+
+.soft-skills-table th:first-child,
+.soft-skills-table td:first-child {
+    width: 30%;
+}
+
+.barre-progression {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    height: 15px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.barre-interne {
+    height: 100%;
+    width: 0;
+    transition: width 1s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+    border-radius: 5px;
+}
+
+.pourcentage {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+    font-weight: bold;
+    mix-blend-mode: difference; 
+    color: var(--couleur-fond-bloc); 
+}
+
+/* ---------------------------------------------------- */
+/* 12. PAGES PROJETS */
+/* ---------------------------------------------------- */
+.header-projet {
+    padding: 60px 80px;
+    background-color: var(--couleur-texte); 
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.header-projet h1 {
+    font-size: 2.8rem;
+    margin-bottom: 5px;
+}
+
+.header-projet p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.contenu-projet {
+    padding: 40px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contenu-projet h2 {
+    color: var(--couleur-primaire);
+    border-bottom: 2px solid var(--couleur-fond-principal);
+    padding-bottom: 10px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.contenu-projet h3 {
+    margin-top: 30px;
+    color: var(--couleur-texte);
+}
+
+.contenu-projet ul, .contenu-projet ol {
+    margin-left: 20px;
+    padding-bottom: 20px;
+}
+
+.introduction-projet {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 40px;
+    padding-left: 20px;
+    border-left: 3px solid var(--couleur-primaire);
+}
+
+.contenu-projet p {
+    text-align: justify;
+}
+
+/* ---------------------------------------------------- */
+/* 9. SECTION CONTACT */
+/* ---------------------------------------------------- */
+.container-contact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.carte-contact {
+    background-color: var(--couleur-fond-bloc);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid var(--couleur-primaire);
+}
+
+.carte-contact h3 {
+    color: var(--couleur-primaire);
+    margin-bottom: 15px;
+}
+
+.btn-telecharger, .carte-contact .btn-savoir-plus {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 15px;
+    background-color: var(--couleur-texte);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-telecharger:hover, .carte-contact .btn-savoir-plus:hover {
+    background-color: var(--couleur-primaire);
+    color: white;
+}
+
+/* ---------------------------------------------------- */
+/* 5. FOOTER */
+/* ---------------------------------------------------- */
+.vagues-footer {
+    position: relative;
+    width: 100%;
+    height: 150px; 
+    overflow: hidden;
+    background-color: var(--couleur-fond-principal); 
+    z-index: 10;
+}
+
+.footer-links {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    padding: 5px 20px;
+    background-color: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); 
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    border-radius: 0 0 15px 15px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 20;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: var(--couleur-texte);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px; 
+}
+
+.footer-links a:hover {
+    color: var(--couleur-primaire);
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(30, 144, 255, 0.3); 
+}
+
+.vague-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--couleur-primaire); 
+}
+
+.vague {
+    position: absolute;
+    width: 200%; 
+    height: 150px;
+    background-repeat: repeat-x;
+    background-size: 50% 150px;
+}
+
+.vague1 { background-image: url('data:image/svg+xml;charset=UTF8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="%23FFFFFF" d="M0 50 C25 80, 75 20, 100 50 L100 100 L0 100 Z" /></svg>'); opacity: 0.9; animation: vague-mouvement 25s linear infinite; z-index: 13; bottom: 0px; }
+.vague2 { background-image: url('data:image/svg+xml;charset=UTF8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="%23FFFFFF" d="M0 50 C25 70, 75 30, 100 50 L100 100 L0 100 Z" /></svg>'); opacity: 0.6; animation: vague-mouvement 20s linear infinite reverse; z-index: 12; bottom: 5px; }
+.vague3 { background-image: url('data:image/svg+xml;charset=UTF8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="%23FFFFFF" d="M0 50 C25 60, 75 40, 100 50 L100 100 L0 100 Z" /></svg>'); opacity: 0.3; animation: vague-mouvement 15s linear infinite; z-index: 11; bottom: 10px; }
+@keyframes vague-mouvement { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* ---------------------------------------------------- */
+/* 13. FORMULAIRE DE CONTACT */
+/* ---------------------------------------------------- */
+.formulaire-contact { display: flex; flex-direction: column; gap: 25px; }
+.form-group { display: flex; flex-direction: column; }
+.form-group label { font-weight: bold; margin-bottom: 8px; color: var(--couleur-texte); }
+.form-group input, .form-group textarea { width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 1rem; background-color: var(--couleur-fond-principal); }
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--couleur-primaire); box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.2); }
+.btn-envoyer { padding: 15px 25px; border: none; border-radius: 6px; background-color: var(--couleur-texte); color: white; font-weight: bold; font-size: 1.1rem; cursor: pointer; width: 100%; }
+.btn-envoyer:hover { background-color: var(--couleur-primaire); transform: translateY(-2px); }
+
+/* ---------------------------------------------------- */
+/* 14. MEDIAS (IMAGES & VIDÉOS) */
+/* ---------------------------------------------------- */
+.contenu-projet img, 
+.contenu-projet iframe, 
+.contenu-projet video { 
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 8px; 
+    margin: 20px 0; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+}
+
+/* ---------------------------------------------------- */
+/* 15. BLOCS DE CODE (PRISM.JS) */
+/* ---------------------------------------------------- */
+.contenu-projet pre[class*="language-"] {
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    overflow: auto;
+    font-size: 0.9em;
+}
+
+/* ---------------------------------------------------- */
+/* 18. RESPONSIVE DESIGN */
+/* ---------------------------------------------------- */
+@media (max-width: 1024px) {
+    .contenu-principal, .contenu-projet, .header-projet {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .bloc-logo { width: 220px; }
+    .nom-site { font-size: 1.2rem; }
+}
+
+@media (max-width: 768px) {
+    .barre-superieure { height: auto; flex-direction: column; padding: 15px 0; position: static; }
+    .bloc-logo { position: static; width: 100%; height: 60px; margin-bottom: 15px; }
+    .menu { gap: 20px; width: 100%; justify-content: center; }
+    .lien { padding: 0 10px; }
+    .bulle { bottom: 5px; }
+    .contenu-principal, .contenu-projet, .header-projet { padding-left: 20px; padding-right: 20px; }
+    .header-projet h1, .section-contenu h1 { font-size: 2rem; }
+    .competences-list table, .soft-skills-table { border: 0; }
+    .competences-list table thead, .soft-skills-table thead { display: none; }
+    .competences-list table tr, .soft-skills-table tr { display: block; margin-bottom: 20px; border-bottom: 2px solid var(--couleur-primaire); padding-bottom: 10px; }
+    .competences-list table td, .soft-skills-table td { display: block; text-align: left; border-bottom: 1px dotted #ccc; padding-left: 0; }
+    .competences-list table td:last-child, .soft-skills-table td:last-child { border-bottom: 0; }
+    .competences-list td:first-child::before, .soft-skills-table td:first-child::before { content: "Compétence : "; font-weight: bold; display: block; margin-bottom: 5px; color: var(--couleur-primaire); }
+    .competences-list td:nth-child(2)::before, .soft-skills-table td:nth-child(2)::before { content: "Détail : "; font-weight: bold; display: block; margin-bottom: 5px; color: var(--couleur-primaire); }
+    .competences-list td:nth-child(3)::before { content: "Niveau : "; font-weight: bold; display: block; margin-bottom: 5px; color: var(--couleur-primaire); }
+    .soft-skills-table td:nth-child(2)::before { content: "Mise en application : "; }
+}
+
+/* ---------------------------------------------------- */
+/* 19. FOND ANIME "TORNADE" */
+/* ---------------------------------------------------- */
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    top: -25vh;
+    left: 0;
+    width: 30vw;
+    height: 150vh;
+    z-index: -1;
+    background: linear-gradient(
+        15deg,
+        rgba(30, 144, 255, 0),
+        rgba(30, 144, 255, 0.12),
+        rgba(30, 144, 255, 0.18),
+        rgba(30, 144, 255, 0.12),
+        rgba(30, 144, 255, 0)
+    );
+    filter: blur(100px);
+    animation: move-tornado 20s linear infinite;
+}
+
+body::after {
+    animation-delay: -10s;
+}
+
+@keyframes move-tornado {
+    0% {
+        transform: translateX(-30vw) rotate(-20deg);
+    }
+    100% {
+        transform: translateX(100vw) rotate(10deg);
+    }
+}
+
+/* ---------------------------------------------------- */
+/* 20. HEADER DYNAMIQUE AU DÉFILEMENT */
+/* ---------------------------------------------------- */
+.barre-superieure.header-scrolled {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.barre-superieure.header-scrolled .bloc-logo {
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.barre-superieure.header-scrolled:hover .bloc-logo {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ---------------------------------------------------- */
+/* 21. LANGUETTE DYNAMIQUE DU LOGO (CORRIGÉ) */
+/* ---------------------------------------------------- */
+.barre-superieure::before {
+    content: '\f054'; /* Icône flèche droite de Font Awesome */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--couleur-texte);
+    color: white;
+    padding: 20px 15px;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 3px 0px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    z-index: 101; /* Doit être au-dessus de la barre de nav */
+    
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Quand le header est défilé ET PAS survolé, on montre la languette */
+.barre-superieure.header-scrolled:not(:hover)::before {
+    opacity: 1;
+    pointer-events: auto;
+    transition-delay: 0.4s; /* Délai pour attendre que le logo soit caché */
+}
