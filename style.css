@@ -338,7 +338,7 @@ html {
     height: 15px;
     position: relative;
     overflow: hidden;
-    width: 100%; /* Important pour le centrage auto */
+    width: 100%; 
 }
 
 .barre-interne {
@@ -632,15 +632,13 @@ html {
     .competences-list table thead, .soft-skills-table thead { display: none; }
     .competences-list table tr, .soft-skills-table tr { display: block; margin-bottom: 15px; border-bottom: 2px solid var(--couleur-primaire); padding-bottom: 8px; }
     
-    /* -- CORRECTION CENTRAGE MOBILE VIA FLEXBOX -- */
+    /* -- CORRECTION CENTRAGE MOBILE -- */
     .competences-list table td, 
     .soft-skills-table td { 
-        display: flex;         /* On utilise Flexbox */
-        flex-direction: column; /* Pour empiler le label et le contenu */
-        align-items: center;   /* Pour centrer horizontalement */
-        text-align: center;    /* Pour centrer le texte */
+        display: block; /* On revient à un affichage bloc simple */
+        text-align: center; /* Centrage du texte inline */
         border-bottom: 1px dotted #ccc; 
-        padding: 10px 5px;     /* Ajustement padding vertical/horizontal */
+        padding: 10px 5px;     
     }
     .competences-list table td:last-child, .soft-skills-table td:last-child { border-bottom: 0; }
     
@@ -649,7 +647,7 @@ html {
     .soft-skills-table td::before { 
         font-weight: bold; 
         display: block; 
-        margin-bottom: 8px; /* Augmente l'espace sous le label */
+        margin-bottom: 8px; 
         color: var(--couleur-primaire);
         width: 100%; 
         text-align: center; 
@@ -662,10 +660,12 @@ html {
     .soft-skills-table td:nth-child(2)::before { content: "Mise en application : "; }
 
     /* Centrage spécifique de la barre de progression dans sa cellule */
+    /* On utilise margin auto pour centrer un élément bloc */
     .competences-list td .barre-progression {
         margin-left: auto;
         margin-right: auto;
-        max-width: 80%; /* Limite la largeur pour un meilleur rendu centré */
+        max-width: 90%; /* Limite légèrement la largeur pour l'esthétique */
+        width: 90%; /* Force la largeur à 90% pour centrer avec margin auto */
     }
     
     /* On cache la languette en mode mobile */
