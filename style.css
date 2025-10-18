@@ -616,7 +616,7 @@ html {
         height: 35px; 
     }
     .bulle { 
-        bottom: 5px; /* Ajusté */
+        bottom: 5px; 
         height: 3px; 
     }
     .contenu-principal, .contenu-projet, .header-projet { 
@@ -632,12 +632,13 @@ html {
     .competences-list table thead, .soft-skills-table thead { display: none; }
     .competences-list table tr, .soft-skills-table tr { display: block; margin-bottom: 15px; border-bottom: 2px solid var(--couleur-primaire); padding-bottom: 8px; }
     
-    /* -- CORRECTION CENTRAGE MOBILE -- */
-    .competences-list table td, .soft-skills-table td { 
+    /* -- CORRECTION CENTRAGE MOBILE VIA FLEXBOX -- */
+    .competences-list table td, 
+    .soft-skills-table td { 
         display: flex; /* Utilisation de Flexbox */
-        flex-direction: column; /* Label au-dessus du contenu */
-        align-items: center; /* Centrage horizontal */
-        text-align: center; /* Centrage du texte */
+        flex-direction: column; /* Stack label et contenu */
+        align-items: center; /* Centrage horizontal de tout */
+        text-align: center; /* Centrage du texte inline */
         border-bottom: 1px dotted #ccc; 
         padding: 8px 0; 
     }
@@ -649,8 +650,8 @@ html {
         display: block; 
         margin-bottom: 5px; 
         color: var(--couleur-primaire);
-        width: 100%; /* S'assure que le label prend toute la largeur pour le centrage */
-        text-align: center; /* Double assurance pour le centrage du label */
+        width: 100%; /* S'assure que le label prend toute la largeur */
+        text-align: center; /* S'assure que le texte du label est centré */
     }
     /* Rétablissement des labels spécifiques */
     .competences-list td:first-child::before { content: "Compétence : "; }
