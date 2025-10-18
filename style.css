@@ -632,17 +632,24 @@ html {
     .competences-list table thead, .soft-skills-table thead { display: none; }
     .competences-list table tr, .soft-skills-table tr { display: block; margin-bottom: 15px; border-bottom: 2px solid var(--couleur-primaire); padding-bottom: 8px; }
     
-    /* -- CORRECTION CENTRAGE MOBILE -- */
+    /* -- CORRECTION CENTRAGE MOBILE V6 (Simplifié) -- */
     .competences-list table td, 
     .soft-skills-table td { 
-        display: block; /* On revient à un affichage bloc simple */
-        text-align: center; /* Centrage du texte inline */
+        display: block;        
+        text-align: center; /* On centre tout le texte DANS la cellule */
         border-bottom: 1px dotted #ccc; 
         padding: 10px 5px;     
     }
     .competences-list table td:last-child, .soft-skills-table td:last-child { border-bottom: 0; }
     
-    /* Style pour le pseudo-élément (label) */
+    /* On s'assure que le contenu *après* le label ::before est aussi centré */
+    .competences-list td > *:not(::before), 
+    .soft-skills-table td > *:not(::before) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Style et centrage pour le pseudo-élément (label) */
     .competences-list td::before, 
     .soft-skills-table td::before { 
         font-weight: bold; 
@@ -659,13 +666,10 @@ html {
     .soft-skills-table td:first-child::before { content: "Compétence : "; }
     .soft-skills-table td:nth-child(2)::before { content: "Mise en application : "; }
 
-    /* Centrage spécifique de la barre de progression dans sa cellule */
-    /* On utilise margin auto pour centrer un élément bloc */
+    /* Centrage de la barre de progression (bloc) */
     .competences-list td .barre-progression {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 90%; /* Limite légèrement la largeur pour l'esthétique */
-        width: 90%; /* Force la largeur à 90% pour centrer avec margin auto */
+        margin: 5px auto 0 auto; 
+        max-width: 90%; 
     }
     
     /* On cache la languette en mode mobile */
