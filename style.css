@@ -595,7 +595,6 @@ html {
         width: 100%; 
         height: 50px; 
         margin-bottom: 10px; 
-        /* Important : On annule la transformation pour la vue mobile */
         transform: none !important; 
         opacity: 1 !important;
         pointer-events: auto !important;
@@ -610,14 +609,14 @@ html {
     }
     .lien { 
         padding: 5px 8px; 
-        height: 35px; /* Rétabli pour un meilleur alignement */
+        height: 35px; 
         font-size: 0.9rem; 
     }
     .lien-conteneur-projets { 
-        height: 35px; /* Rétabli pour un meilleur alignement */
+        height: 35px; 
     }
     .bulle { 
-        bottom: 5px; /* Remonté légèrement pour plus d'espace */
+        bottom: 5px; /* Ajusté */
         height: 3px; 
     }
     .contenu-principal, .contenu-projet, .header-projet { 
@@ -632,9 +631,13 @@ html {
     .competences-list table, .soft-skills-table { border: 0; }
     .competences-list table thead, .soft-skills-table thead { display: none; }
     .competences-list table tr, .soft-skills-table tr { display: block; margin-bottom: 15px; border-bottom: 2px solid var(--couleur-primaire); padding-bottom: 8px; }
+    
+    /* -- CORRECTION CENTRAGE MOBILE -- */
     .competences-list table td, .soft-skills-table td { 
-        display: block; 
-        text-align: center; /* -- CORRECTION : Centrage du contenu des cellules -- */
+        display: flex; /* Utilisation de Flexbox */
+        flex-direction: column; /* Label au-dessus du contenu */
+        align-items: center; /* Centrage horizontal */
+        text-align: center; /* Centrage du texte */
         border-bottom: 1px dotted #ccc; 
         padding: 8px 0; 
     }
@@ -646,7 +649,8 @@ html {
         display: block; 
         margin-bottom: 5px; 
         color: var(--couleur-primaire);
-        text-align: center; /* S'assure que le label est aussi centré */
+        width: 100%; /* S'assure que le label prend toute la largeur pour le centrage */
+        text-align: center; /* Double assurance pour le centrage du label */
     }
     /* Rétablissement des labels spécifiques */
     .competences-list td:first-child::before { content: "Compétence : "; }
