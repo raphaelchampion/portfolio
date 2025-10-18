@@ -83,6 +83,7 @@ html {
     gap: 40px;
     position: relative;
     height: 100%;
+    align-items: center;
 }
 
 .lien {
@@ -111,6 +112,7 @@ html {
     position: relative;
     display: flex;
     align-items: center;
+    height: 100%;
 }
 
 .panel-projets {
@@ -162,10 +164,19 @@ html {
     min-height: 80vh; 
 }
 
+#accueil .carte-unifiee h1 { 
+    text-align: center;
+    margin-bottom: 25px; 
+    font-size: 2.5rem; 
+}
+
 .a-propos-detail p {
     text-align: justify;
     margin-bottom: 25px;
     font-size: 1.1rem; 
+}
+.a-propos-detail p:last-child {
+    margin-bottom: 0;
 }
 
 .section-contenu p, .section-contenu li {
@@ -211,10 +222,13 @@ html {
 }
 
 .carte-unifiee {
-    padding: 20px;
-    background: var(--couleur-fond-bloc);
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+    padding: 30px; 
+    background: rgba(255, 255, 255, 0.9); 
+    border-radius: 12px; 
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08); 
+    border: 1px solid rgba(200, 200, 200, 0.5); 
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .qualifications .carte-formation {
@@ -241,7 +255,7 @@ html {
 }
 
 .langues-progress {
-    padding: 20px; 
+    /* Hérite des styles .carte-unifiee */
 }
 
 .langue-bloc-carte {
@@ -249,6 +263,7 @@ html {
     border-radius: 6px;
     margin-bottom: 15px;
     border: 1px solid var(--couleur-fond-principal); 
+    background-color: transparent; 
 }
 
 .langue-item {
@@ -290,7 +305,7 @@ html {
 .competences-list table {
     width: 100%;
     border-collapse: collapse;
-    background-color: var(--couleur-fond-bloc);
+    background-color: var(--couleur-fond-bloc); 
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
@@ -335,13 +350,14 @@ html {
 
 .pourcentage {
     position: absolute;
-    right: 5px;
+    right: 8px; 
     top: 50%;
     transform: translateY(-50%);
     font-size: 0.8em;
     font-weight: bold;
-    mix-blend-mode: difference; 
-    color: var(--couleur-fond-bloc); 
+    color: var(--couleur-texte); 
+    mix-blend-mode: normal; 
+    z-index: 1; 
 }
 
 /* ---------------------------------------------------- */
@@ -414,10 +430,7 @@ html {
 }
 
 .carte-contact {
-    background-color: var(--couleur-fond-bloc);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    /* Hérite des styles .carte-unifiee */
     border-top: 5px solid var(--couleur-primaire);
 }
 
@@ -565,21 +578,66 @@ html {
 }
 
 @media (max-width: 768px) {
-    .barre-superieure { height: auto; flex-direction: column; padding: 15px 0; position: static; }
-    .bloc-logo { position: static; width: 100%; height: 60px; margin-bottom: 15px; }
-    .menu { gap: 20px; width: 100%; justify-content: center; }
-    .lien { padding: 0 10px; }
-    .bulle { bottom: 5px; }
-    .contenu-principal, .contenu-projet, .header-projet { padding-left: 20px; padding-right: 20px; }
-    .header-projet h1, .section-contenu h1 { font-size: 2rem; }
+    .barre-superieure { 
+        height: auto; 
+        flex-direction: column; 
+        padding: 10px 0; /* Réduit padding */
+        position: static; 
+    }
+    .bloc-logo { 
+        position: static; 
+        width: 100%; 
+        height: 50px; /* Réduit hauteur logo */
+        margin-bottom: 10px; 
+    }
+    .menu { 
+        gap: 10px; /* Réduit encore l'espace */
+        width: 95%; /* Légèrement moins large */
+        justify-content: space-around; /* Mieux répartir les liens */
+        flex-wrap: wrap; 
+        align-items: center; 
+        height: auto; /* Hauteur auto */
+    }
+    .lien { 
+        padding: 5px; /* Réduit padding lien */
+        height: 35px; /* Hauteur fixe pour aligner */
+        font-size: 0.9rem; /* Taille police réduite */
+    }
+    .lien-conteneur-projets { 
+        height: 35px; /* Hauteur fixe */
+    }
+    .bulle { 
+        bottom: 2px; 
+        height: 3px; /* Bulle plus fine */
+    }
+    .contenu-principal, .contenu-projet, .header-projet { 
+        padding-left: 15px; /* Marges réduites */
+        padding-right: 15px; 
+    }
+    #accueil .carte-unifiee h1, 
+    .header-projet h1, 
+    .section-contenu h1 { 
+        font-size: 1.6rem; /* Taille H1 réduite */
+    }
     .competences-list table, .soft-skills-table { border: 0; }
     .competences-list table thead, .soft-skills-table thead { display: none; }
-    .competences-list table tr, .soft-skills-table tr { display: block; margin-bottom: 20px; border-bottom: 2px solid var(--couleur-primaire); padding-bottom: 10px; }
-    .competences-list table td, .soft-skills-table td { display: block; text-align: left; border-bottom: 1px dotted #ccc; padding-left: 0; }
+    .competences-list table tr, .soft-skills-table tr { display: block; margin-bottom: 15px; border-bottom: 2px solid var(--couleur-primaire); padding-bottom: 8px; }
+    .competences-list table td, .soft-skills-table td { display: block; text-align: left; border-bottom: 1px dotted #ccc; padding: 8px 0; }
     .competences-list table td:last-child, .soft-skills-table td:last-child { border-bottom: 0; }
-    .competences-list td:first-child::before, .soft-skills-table td:first-child::before { content: "Compétence : "; font-weight: bold; display: block; margin-bottom: 5px; color: var(--couleur-primaire); }
-    .competences-list td:nth-child(2)::before, .soft-skills-table td:nth-child(2)::before { content: "Détail : "; font-weight: bold; display: block; margin-bottom: 5px; color: var(--couleur-primaire); }
-    .competences-list td:nth-child(3)::before { content: "Niveau : "; font-weight: bold; display: block; margin-bottom: 5px; color: var(--couleur-primaire); }
+    
+    .competences-list td::before, 
+    .soft-skills-table td::before { 
+        font-weight: bold; 
+        display: block; 
+        margin-bottom: 5px; 
+        color: var(--couleur-primaire);
+        text-align: center; 
+    }
+    /* Rétablissement des labels spécifiques */
+    .competences-list td:first-child::before { content: "Compétence : "; }
+    .competences-list td:nth-child(2)::before { content: "Détail : "; }
+    .competences-list td:nth-child(3)::before { content: "Niveau : "; }
+    .soft-skills-table td:first-child::before { content: "Compétence : "; }
     .soft-skills-table td:nth-child(2)::before { content: "Mise en application : "; }
 }
 
@@ -648,10 +706,10 @@ body::after {
 }
 
 /* ---------------------------------------------------- */
-/* 21. LANGUETTE DYNAMIQUE DU LOGO (CORRIGÉ) */
+/* 21. LANGUETTE DYNAMIQUE DU LOGO */
 /* ---------------------------------------------------- */
 .barre-superieure::before {
-    content: '\f054'; /* Icône flèche droite de Font Awesome */
+    content: '\f054'; 
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     position: absolute;
@@ -664,16 +722,15 @@ body::after {
     border-radius: 0 10px 10px 0;
     box-shadow: 3px 0px 8px rgba(0,0,0,0.2);
     cursor: pointer;
-    z-index: 101; /* Doit être au-dessus de la barre de nav */
+    z-index: 101; 
     
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
 }
 
-/* Quand le header est défilé ET PAS survolé, on montre la languette */
 .barre-superieure.header-scrolled:not(:hover)::before {
     opacity: 1;
     pointer-events: auto;
-    transition-delay: 0.4s; /* Délai pour attendre que le logo soit caché */
+    transition-delay: 0.4s; 
 }
