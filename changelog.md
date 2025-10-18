@@ -160,3 +160,39 @@
 * **Indicateur de Défilement :**
     * La couleur de l'indicateur a été changée pour un bleu semi-transparent, s'harmonisant mieux avec le nouveau design.
     * Le script a été ajusté pour que la barre s'arrête juste avant le footer, pour une finition plus propre.
+
+---
+
+# Version V1.0 (18 Octobre 2025)
+*Statut : Première version stable déployée.*
+
+### 🚀 Fonctionnalités Principales
+* Site portfolio complet avec 5 pages de projet détaillées (contenu, images, vidéos).
+* Design responsive pour bureau, tablette et mobile.
+* Header dynamique avec effet de transparence, logo rétractable et languette d'indication.
+* Animation de fond "tornade".
+* Formulaire de contact fonctionnel via service externe.
+* Intégration de vidéos YouTube, images et blocs de code avec coloration syntaxique (Prism.js).
+* Journal des modifications (`CHANGELOG.md`) initialisé.
+
+### ✨ Contenu & Peaufinage
+* Texte d'introduction finalisé, incluant le parcours et les motivations.
+* Sections compétences (Hard & Soft Skills) structurées et complétées.
+* **Mise à jour du CV** vers la dernière version et lien corrigé dans la section Contact.
+
+---
+
+# Version V1.1 (18 Octobre 2025)
+*Statut : Corrections UX et ajustements visuels post-déploiement.*
+
+### ✨ Peaufinage & Contenu
+* **Accueil :** Titre "Bonjour, je suis Raphaël." intégré à la carte d'introduction pour une meilleure harmonie visuelle.
+* **Compétences :** Couleur du texte des pourcentages sur les barres de progression mise en noir pour améliorer la lisibilité.
+* **Animation "Tornade" :** Animation ajustée pour être plus présente à l'écran.
+* **Indicateur de Défilement :** Couleur ajustée et arrêt avant le footer.
+
+### ✅ Corrections de Bugs (Fixes)
+* **Cartes Contact :** Styles (fond blanc, ombre) restaurés après avoir été affectés par la modification de `.carte-unifiee`.
+* **Tableaux Responsive :** Les titres ("Compétence :", "Détail :", etc.) dans la vue mobile sont désormais centrés.
+* **Navigation Responsive :** Les éléments du menu sont maintenant correctement alignés verticalement sur mobile.
+* **Languette du Logo :** Positionnement et timing d'apparition/disparition corrigés pour une interaction logique et sans décalage visuel. Le logo se cache maintenant complètement.

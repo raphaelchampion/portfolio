@@ -2,13 +2,13 @@
 /* 11. DESIGN GLOBAL & RESET */
 /* ---------------------------------------------------- */
 :root {
-    --couleur-fond-principal: #f8f8f8; 
-    --couleur-fond-bloc: #ffffff;      
-    --couleur-texte: #1c1c1c;           
-    --couleur-primaire: #1e90ff;       
-    
-    --couleur-seuil-faible: #ff4500; 
-    --couleur-seuil-moyen: #1e90ff; 
+    --couleur-fond-principal: #f8f8f8;
+    --couleur-fond-bloc: #ffffff;
+    --couleur-texte: #1c1c1c;
+    --couleur-primaire: #1e90ff;
+
+    --couleur-seuil-faible: #ff4500;
+    --couleur-seuil-moyen: #1e90ff;
     --couleur-seuil-eleve: #228b22;
     --hauteur-nav: 105px;
 }
@@ -17,13 +17,13 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    transition: all 0.3s ease-in-out; 
+    transition: all 0.3s ease-in-out;
 }
 
 body, html {
     font-family: 'Inter', sans-serif;
     color: var(--couleur-texte);
-    line-height: 1.8; 
+    line-height: 1.8;
     scroll-behavior: smooth;
 }
 
@@ -34,11 +34,11 @@ html {
 .scroll-indicator {
     position: fixed;
     top: 0;
-    left: 0; 
-    width: 10px; 
-    height: 0; 
+    left: 0;
+    width: 10px;
+    height: 0;
     background-color: rgba(30, 144, 255, 0.6);
-    z-index: 99; 
+    z-index: 99;
     transition: height 0.1s linear;
 }
 
@@ -54,7 +54,7 @@ html {
     background: var(--couleur-fond-bloc);
     height: var(--hauteur-nav);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 100; 
+    z-index: 100;
     transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
 }
 
@@ -63,8 +63,8 @@ html {
     left: 0;
     top: 0;
     height: var(--hauteur-nav);
-    width: 280px; 
-    background: var(--couleur-texte); 
+    width: 280px;
+    background: var(--couleur-texte);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -75,7 +75,7 @@ html {
     color: white;
     font-weight: bold;
     font-size: 1.4rem;
-    padding-left: 20px; 
+    padding-left: 20px;
 }
 
 .menu {
@@ -102,9 +102,9 @@ html {
     bottom: 20px;
     height: 4px;
     width: 0;
-    background: var(--couleur-texte); 
+    background: var(--couleur-texte);
     border-radius: 2px;
-    transition: all 0.4s ease-in-out; 
+    transition: all 0.4s ease-in-out;
     z-index: 1;
 }
 
@@ -120,7 +120,7 @@ html {
     top: 90%;
     left: 50%;
     transform: translateX(-50%);
-    display: none; 
+    display: none;
     background: var(--couleur-fond-bloc);
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     border-radius: 8px;
@@ -128,13 +128,13 @@ html {
     min-width: 240px;
     flex-direction: column;
     z-index: 50;
-    pointer-events: none; 
+    pointer-events: none;
 }
 
 .lien-conteneur-projets:hover .panel-projets,
 .panel-projets:hover {
     display: flex;
-    pointer-events: all; 
+    pointer-events: all;
 }
 
 .panel-projets a {
@@ -156,24 +156,24 @@ html {
     max-width: 1400px;
     margin: 0 auto;
     padding: 60px 80px 40px 80px;
-    padding-bottom: 0; 
+    padding-bottom: 0;
 }
 
 .section-contenu {
     padding: 80px 0;
-    min-height: 80vh; 
+    min-height: 80vh;
 }
 
-#accueil .carte-unifiee h1 { 
+#accueil .carte-unifiee h1 {
     text-align: center;
-    margin-bottom: 25px; 
-    font-size: 2.5rem; 
+    margin-bottom: 25px;
+    font-size: 2.5rem;
 }
 
 .a-propos-detail p {
     text-align: justify;
     margin-bottom: 25px;
-    font-size: 1.1rem; 
+    font-size: 1.1rem;
 }
 .a-propos-detail p:last-child {
     margin-bottom: 0;
@@ -222,11 +222,11 @@ html {
 }
 
 .carte-unifiee {
-    padding: 30px; 
-    background: rgba(255, 255, 255, 0.9); 
-    border-radius: 12px; 
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08); 
-    border: 1px solid rgba(200, 200, 200, 0.5); 
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    border: 1px solid rgba(200, 200, 200, 0.5);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
 }
@@ -262,8 +262,8 @@ html {
     padding: 15px;
     border-radius: 6px;
     margin-bottom: 15px;
-    border: 1px solid var(--couleur-fond-principal); 
-    background-color: transparent; 
+    border: 1px solid var(--couleur-fond-principal);
+    background-color: transparent;
 }
 
 .langue-item {
@@ -290,7 +290,7 @@ html {
 
 .barre-progression.langue-barre {
     width: 60%;
-    height: 18px; 
+    height: 18px;
 }
 
 .competences-list {
@@ -305,13 +305,13 @@ html {
 .competences-list table {
     width: 100%;
     border-collapse: collapse;
-    background-color: var(--couleur-fond-bloc); 
+    background-color: var(--couleur-fond-bloc);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-.competences-list th, 
+.competences-list th,
 .competences-list td {
     padding: 15px;
     text-align: left;
@@ -322,7 +322,7 @@ html {
     font-weight: 500;
 }
 
-.competences-list th:nth-child(3), 
+.competences-list th:nth-child(3),
 .competences-list td:nth-child(3) {
     width: 25%;
 }
@@ -344,20 +344,20 @@ html {
 .barre-interne {
     height: 100%;
     width: 0;
-    transition: width 1s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+    transition: width 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     border-radius: 5px;
 }
 
 .pourcentage {
     position: absolute;
-    right: 8px; 
+    right: 8px;
     top: 50%;
     transform: translateY(-50%);
     font-size: 0.8em;
     font-weight: bold;
-    color: var(--couleur-texte); 
-    mix-blend-mode: normal; 
-    z-index: 1; 
+    color: var(--couleur-texte);
+    mix-blend-mode: normal;
+    z-index: 1;
 }
 
 /* ---------------------------------------------------- */
@@ -365,7 +365,7 @@ html {
 /* ---------------------------------------------------- */
 .header-projet {
     padding: 60px 80px;
-    background-color: var(--couleur-texte); 
+    background-color: var(--couleur-texte);
     color: white;
     border-bottom: 2px solid rgba(255, 255, 255, 0.5);
     border-top: 2px solid rgba(255, 255, 255, 0.5);
@@ -429,10 +429,18 @@ html {
     margin-top: 40px;
 }
 
+/* --- CORRECTION : Réapplication des styles de carte --- */
 .carte-contact {
-    /* Hérite des styles .carte-unifiee */
-    border-top: 5px solid var(--couleur-primaire);
+    padding: 30px;
+    background-color: var(--couleur-fond-bloc); /* Fond blanc opaque */
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    border: 1px solid rgba(200, 200, 200, 0.5);
+    border-top: 5px solid var(--couleur-primaire); /* Garde la bordure spécifique */
+    backdrop-filter: blur(5px); /* On peut garder l'effet si souhaité */
+    -webkit-backdrop-filter: blur(5px);
 }
+/* --- FIN CORRECTION --- */
 
 .carte-contact h3 {
     color: var(--couleur-primaire);
@@ -461,9 +469,9 @@ html {
 .vagues-footer {
     position: relative;
     width: 100%;
-    height: 150px; 
+    height: 150px;
     overflow: hidden;
-    background-color: var(--couleur-fond-principal); 
+    background-color: var(--couleur-fond-principal);
     z-index: 10;
 }
 
@@ -474,11 +482,11 @@ html {
     transform: translateX(-50%);
     width: fit-content;
     padding: 5px 20px;
-    background-color: rgba(255, 255, 255, 0.5); 
+    background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px); 
-    border: 1px solid rgba(255, 255, 255, 0.3); 
-    border-radius: 0 0 15px 15px; 
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0 0 15px 15px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     z-index: 20;
     display: flex;
@@ -494,13 +502,13 @@ html {
     justify-content: center;
     width: 40px;
     height: 40px;
-    border-radius: 8px; 
+    border-radius: 8px;
 }
 
 .footer-links a:hover {
     color: var(--couleur-primaire);
     background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 0 10px rgba(30, 144, 255, 0.3); 
+    box-shadow: 0 0 10px rgba(30, 144, 255, 0.3);
 }
 
 .vague-container {
@@ -509,12 +517,12 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--couleur-primaire); 
+    background-color: var(--couleur-primaire);
 }
 
 .vague {
     position: absolute;
-    width: 200%; 
+    width: 200%;
     height: 150px;
     background-repeat: repeat-x;
     background-size: 50% 150px;
@@ -539,17 +547,17 @@ html {
 /* ---------------------------------------------------- */
 /* 14. MEDIAS (IMAGES & VIDÉOS) */
 /* ---------------------------------------------------- */
-.contenu-projet img, 
-.contenu-projet iframe, 
-.contenu-projet video { 
+.contenu-projet img,
+.contenu-projet iframe,
+.contenu-projet video {
     width: 100%;
     max-width: 100%;
     height: auto;
     max-height: 500px;
     object-fit: contain;
-    border-radius: 8px; 
-    margin: 20px 0; 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* ---------------------------------------------------- */
@@ -578,45 +586,45 @@ html {
 }
 
 @media (max-width: 768px) {
-    .barre-superieure { 
-        height: auto; 
-        flex-direction: column; 
+    .barre-superieure {
+        height: auto;
+        flex-direction: column;
         padding: 10px 0; /* Réduit padding */
-        position: static; 
+        position: static;
     }
-    .bloc-logo { 
-        position: static; 
-        width: 100%; 
+    .bloc-logo {
+        position: static;
+        width: 100%;
         height: 50px; /* Réduit hauteur logo */
-        margin-bottom: 10px; 
+        margin-bottom: 10px;
     }
-    .menu { 
+    .menu {
         gap: 10px; /* Réduit encore l'espace */
         width: 95%; /* Légèrement moins large */
         justify-content: space-around; /* Mieux répartir les liens */
-        flex-wrap: wrap; 
-        align-items: center; 
+        flex-wrap: wrap;
+        align-items: center;
         height: auto; /* Hauteur auto */
     }
-    .lien { 
-        padding: 5px; /* Réduit padding lien */
+    .lien {
+        padding: 5px 8px; /* Réduit padding lien */
         height: 35px; /* Hauteur fixe pour aligner */
         font-size: 0.9rem; /* Taille police réduite */
     }
-    .lien-conteneur-projets { 
+    .lien-conteneur-projets {
         height: 35px; /* Hauteur fixe */
     }
-    .bulle { 
-        bottom: 2px; 
+    .bulle {
+        bottom: 2px;
         height: 3px; /* Bulle plus fine */
     }
-    .contenu-principal, .contenu-projet, .header-projet { 
+    .contenu-principal, .contenu-projet, .header-projet {
         padding-left: 15px; /* Marges réduites */
-        padding-right: 15px; 
+        padding-right: 15px;
     }
-    #accueil .carte-unifiee h1, 
-    .header-projet h1, 
-    .section-contenu h1 { 
+    #accueil .carte-unifiee h1, /* Cible spécifiquement le H1 dans la carte accueil */
+    .header-projet h1,
+    .section-contenu h1 {
         font-size: 1.6rem; /* Taille H1 réduite */
     }
     .competences-list table, .soft-skills-table { border: 0; }
@@ -624,14 +632,14 @@ html {
     .competences-list table tr, .soft-skills-table tr { display: block; margin-bottom: 15px; border-bottom: 2px solid var(--couleur-primaire); padding-bottom: 8px; }
     .competences-list table td, .soft-skills-table td { display: block; text-align: left; border-bottom: 1px dotted #ccc; padding: 8px 0; }
     .competences-list table td:last-child, .soft-skills-table td:last-child { border-bottom: 0; }
-    
-    .competences-list td::before, 
-    .soft-skills-table td::before { 
-        font-weight: bold; 
-        display: block; 
-        margin-bottom: 5px; 
+
+    .competences-list td::before,
+    .soft-skills-table td::before {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
         color: var(--couleur-primaire);
-        text-align: center; 
+        text-align: center;
     }
     /* Rétablissement des labels spécifiques */
     .competences-list td:first-child::before { content: "Compétence : "; }
@@ -709,7 +717,7 @@ body::after {
 /* 21. LANGUETTE DYNAMIQUE DU LOGO */
 /* ---------------------------------------------------- */
 .barre-superieure::before {
-    content: '\f054'; 
+    content: '\f054';
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     position: absolute;
@@ -722,8 +730,8 @@ body::after {
     border-radius: 0 10px 10px 0;
     box-shadow: 3px 0px 8px rgba(0,0,0,0.2);
     cursor: pointer;
-    z-index: 101; 
-    
+    z-index: 101;
+
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
@@ -732,5 +740,5 @@ body::after {
 .barre-superieure.header-scrolled:not(:hover)::before {
     opacity: 1;
     pointer-events: auto;
-    transition-delay: 0.4s; 
+    transition-delay: 0.4s;
 }
