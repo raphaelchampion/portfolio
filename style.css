@@ -338,7 +338,7 @@ html {
     height: 15px;
     position: relative;
     overflow: hidden;
-    width: 100%;
+    width: 100%; /* Important pour le centrage auto */
 }
 
 .barre-interne {
@@ -635,23 +635,24 @@ html {
     /* -- CORRECTION CENTRAGE MOBILE VIA FLEXBOX -- */
     .competences-list table td, 
     .soft-skills-table td { 
-        display: flex; /* Utilisation de Flexbox */
-        flex-direction: column; /* Stack label et contenu */
-        align-items: center; /* Centrage horizontal de tout */
-        text-align: center; /* Centrage du texte inline */
+        display: flex;         /* On utilise Flexbox */
+        flex-direction: column; /* Pour empiler le label et le contenu */
+        align-items: center;   /* Pour centrer horizontalement */
+        text-align: center;    /* Pour centrer le texte */
         border-bottom: 1px dotted #ccc; 
-        padding: 8px 0; 
+        padding: 10px 5px;     /* Ajustement padding vertical/horizontal */
     }
     .competences-list table td:last-child, .soft-skills-table td:last-child { border-bottom: 0; }
     
+    /* Style pour le pseudo-élément (label) */
     .competences-list td::before, 
     .soft-skills-table td::before { 
         font-weight: bold; 
         display: block; 
-        margin-bottom: 5px; 
+        margin-bottom: 8px; /* Augmente l'espace sous le label */
         color: var(--couleur-primaire);
-        width: 100%; /* S'assure que le label prend toute la largeur */
-        text-align: center; /* S'assure que le texte du label est centré */
+        width: 100%; 
+        text-align: center; 
     }
     /* Rétablissement des labels spécifiques */
     .competences-list td:first-child::before { content: "Compétence : "; }
@@ -659,6 +660,13 @@ html {
     .competences-list td:nth-child(3)::before { content: "Niveau : "; }
     .soft-skills-table td:first-child::before { content: "Compétence : "; }
     .soft-skills-table td:nth-child(2)::before { content: "Mise en application : "; }
+
+    /* Centrage spécifique de la barre de progression dans sa cellule */
+    .competences-list td .barre-progression {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 80%; /* Limite la largeur pour un meilleur rendu centré */
+    }
     
     /* On cache la languette en mode mobile */
     .barre-superieure::before {
