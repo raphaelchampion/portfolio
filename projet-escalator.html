@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatisation d'un Escalier Mécanique - Raphaël CHAMPION</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+</head>
+<body>
+
+    <header class="barre-superieure">
+        <div class="bloc-logo"><span class="nom-site">Portfolio Raphaël CHAMPION</span></div>
+        <nav class="menu">
+            <a href="index.html#accueil" class="lien" data-section="accueil">Accueil</a>
+            
+            <div class="lien-conteneur-projets"> 
+                <a href="index.html#projets" class="lien actif projets" data-section="projets">Projets</a>
+                <div class="panel-projets">
+                    <a href="projet-escalator.html">Escalier Mécanique</a>
+                    <a href="projet-ags.html">Analyseur Gisement Solaire</a>
+                    <a href="projet-robot.html">Robot autonome</a>
+                    <a href="projet-vae.html">Vélo Assistance Électrique</a>
+                    <a href="projet-roomba.html">Projet Roomba</a>
+                    <a href="projet-alarme.html">Système d'alarme</a>
+                    <a href="projet-lego.html">Robot LEGO Mindstorm</a>
+                </div>
+            </div>
+            
+            <a href="index.html#competences" class="lien" data-section="competences">Compétences</a>
+            <a href="index.html#savoirplus" class="lien" data-section="savoirplus">Contact & Bilan</a>
+            <div class="bulle" style="transform: translateX(140px); width: 75px;"></div> 
+        </nav>
+    </header>
+
+    <div class="header-projet">
+        <h1>Automatisation d'un Escalier Mécanique Réversible ⚙️</h1>
+        <p>Conception et programmation d'un automate (API) pour la gestion optimisée de l'énergie et la sécurité.</p>
+    </div>
+
+    <main class="contenu-projet" id="contenu">
+        <p class="introduction-projet">
+            Ce projet vise à moderniser la gestion d'un escalier mécanique industriel réversible (Montée/Descente) en passant d'une logique câblée à une logique programmée par **API**. L'accent a été mis sur l'**économie d'énergie** (fonctionnement sur détection) et la fiabilité de la **fonction de temporisation redéclenchable**.
+        </p>
+
+        <h2>Contexte et Impératifs du Cahier des Charges</h2>
+        <p>
+            Les spécifications fonctionnelles ont été transcrites en logique séquentielle pour garantir la sécurité et l'optimisation.
+        </p>
+        
+        <h3>Mnémoniques Utilisées (Entrées / Sorties) :</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Mnémonique</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Entrée</td><td><strong>S041 / S042</strong></td><td>Cellules Photoélectriques (Détection Bas / Haut)</td></tr>
+                <tr><td>Entrée</td><td><strong>S040</strong></td><td>Commutateur à clé (Sélection sens)</td></tr>
+                <tr><td>Entrée</td><td><strong>ATU</strong></td><td>Arrêt d'Urgence (Sécurité globale)</td></tr>
+                <tr><td>Sortie</td><td><strong>KM040 / KM041</strong></td><td>Contacteurs Moteur (Sens Montée / Descente)</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Analyse Séquentielle et Logique de Maintien</h2>
+        <p>
+            Le cœur du programme est basé sur un **GRAFCET de production** (modélisé sur M3 Soft) en divergence OU pour gérer l'attente et les deux sens de marche. La principale difficulté logique réside dans la gestion du Timer.
+        </p>
+        
+        <h3>La Fonction Redéclenchable (CRITIQUE)</h3>
+        <p>
+            L'escalier doit fonctionner pendant **5 minutes (300s)** après le passage du dernier usager. Si un nouvel usager est détecté avant la fin du décompte, la minuterie doit se **remettre à zéro (Reset)** sans jamais interrompre la marche moteur. Cette logique est assurée par une boucle de reset spécifique dans le GRAFCET, déclenchée par les capteurs dès qu'un nouvel usager apparaît pendant le comptage.
+        </p>
+        
+        <img src="images/GRAFCET_ESCALATOR.png" alt="Image du GRAFCET du système d'escalier mécanique" title="GRAFCET de production">
+        <p class="legende-code">Modélisation du GRAFCET de production en divergence OU, intégrant la boucle de Reset du Timer.</p>
+
+        <h2>Traduction et Validation</h2>
+        <p>
+            Pour la programmation de l'automate, la logique a été convertie en **Équations Booléennes** en utilisant la méthode du **Maintien Prioritaire** ($X_{n} = (Activation + X_{n}) \cdot \overline{Desactivation}$).
+        </p>
+        
+        <div class="competences-list">
+            <h3>Tableau des Équations Finales</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Étape</th>
+                        <th>Activation (SET)</th>
+                        <th>Désactivation (RESET)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Montée (X2)</td><td>X1 $\cdot$ S040\_1 $\cdot$ S041</td><td>X5 (Comptage)</td></tr>
+                    <tr><td>Descente (X3)</td><td>X1 $\cdot$ S040\_2 $\cdot$ S042</td><td>X5 (Comptage)</td></tr>
+                    <tr><td>Comptage (X5)</td><td>((X2+X3) $\cdot$ !S041 $\cdot$ !S042) + X7</td><td>X6 + X7 (Arrêt/Reset)</td></tr>
+                    <tr><td>Reset (X7)</td><td>X5 $\cdot$ T $\lt$ 300s $\cdot$ (S041+S042)</td><td>X5</td></tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h3>Chronogrammes de Validation</h3>
+        <p>
+            Les chronogrammes ont permis de valider que la fonction redéclenchable fonctionne : en cas de passages multiples, le Timer est remis à zéro immédiatement, garantissant que le moteur ne coupe pas tant qu'il y a du flux.
+        </p>
+        
+        <img src="images/chronogrammes_escalator.png" alt="Chronogrammes de validation pour le maintien et le reset du timer" title="Chronogrammes de validation">
+
+        <h2>Bilan et Compétences Techniques</h2>
+        <p>
+            Ce projet est une application concrète de la **logique séquentielle** pour l'automatisation, avec une attention particulière à la gestion de l'énergie et des fonctions complexes de temporisation.
+        </p>
+        
+        <div class="competences-list">
+            <h3>Compétences Développées sur ce Projet</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Compétence</th>
+                        <th>Détail de la compétence</th>
+                        <th>Niveau d’acquisition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Analyse Séquentielle (GRAFCET)</strong></td>
+                        <td>Conception et modélisation d'un système à états complexes (divergence en OU, boucles).</td>
+                        <td class="barre-cell">
+                            <div class="barre-progression" data-level="90"><div class="barre-interne"></div><span class="pourcentage">90%</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Traduction Logique (API)</strong></td>
+                        <td>Conversion de la logique GRAFCET en équations booléennes pour programmation d'automate.</td>
+                        <td class="barre-cell">
+                            <div class="barre-progression" data-level="85"><div class="barre-interne"></div><span class="pourcentage">85%</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gestion de la Sécurité</strong></td>
+                        <td>Mise en place d'une chaîne de sécurité (Arrêt d'Urgence, protection thermique).</td>
+                        <td class="barre-cell">
+                            <div class="barre-progression" data-level="75"><div class="barre-interne"></div><span class="pourcentage">75%</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Validation et Chronogrammes</strong></td>
+                        <td>Utilisation des chronogrammes pour valider le comportement temporel du système.</td>
+                        <td class="barre-cell">
+                            <div class="barre-progression" data-level="80"><div class="barre-interne"></div><span class="pourcentage">80%</span></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="vagues-footer">
+        </footer>
+
+    <script src="main.js"></script>
+
+    <script>
+        // Masque le lien vers la page actuelle dans le menu déroulant
+        document.querySelector('.panel-projets a[href="projet-escalator.html"]').style.display = 'none';
+    </script>
+
+</body>
+</html>

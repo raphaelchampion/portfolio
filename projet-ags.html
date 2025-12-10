@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Analyseur Gisement Solaire - Raphaël CHAMPION</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+</head>
+<body>
+
+    <header class="barre-superieure">
+        <div class="bloc-logo"><span class="nom-site">Portfolio Raphaël CHAMPION</span></div>
+        <nav class="menu">
+            <a href="index.html#accueil" class="lien" data-section="accueil">Accueil</a>
+            
+            <div class="lien-conteneur-projets"> 
+                <a href="index.html#projets" class="lien actif projets" data-section="projets">Projets</a>
+                <div class="panel-projets">
+                    <a href="projet-ags.html">Analyseur Gisement Solaire</a> 
+                    <a href="projet-robot.html">Robot autonome</a>
+                    <a href="projet-vae.html">Vélo Assistance Électrique</a>
+                    <a href="projet-roomba.html">Projet Roomba</a>
+                    <a href="projet-alarme.html">Système d'alarme</a>
+                    <a href="projet-lego.html">Robot LEGO Mindstorm</a>
+                </div>
+            </div>
+            
+            <a href="index.html#competences" class="lien" data-section="competences">Compétences</a>
+            <a href="index.html#savoirplus" class="lien" data-section="savoirplus">Contact & Bilan</a>
+            <div class="bulle" style="transform: translateX(140px); width: 75px;"></div> 
+        </nav>
+    </header>
+
+    <div class="header-projet">
+        <h1>Analyseur de Gisement Solaire (AGS) ☀️</h1>
+        <p>Développement complet de l'interface de supervision LabVIEW et de la programmation de l'acquisition des données embarquées (PICkit).</p>
+    </div>
+
+    <main class="contenu-projet" id="contenu">
+        <p class="introduction-projet">
+            Ce projet vise à développer un Analyseur de Gisement Solaire (AGS), un outil destiné à aider les installateurs à <strong>évaluer la production et la rentabilité</strong> d'une installation photovoltaïque. Ma contribution s'est concentrée sur la <strong>chaîne de traitement numérique du signal</strong> : de l'acquisition sur le microcontrôleur (PICkit) à la visualisation des résultats sur l'IHM LabVIEW.
+        </p>
+
+        <h2>Contexte et Objectifs</h2>
+        <p>
+            L'objectif principal de l'AGS est de <strong>mesurer en temps réel</strong> les grandeurs physiques liées au potentiel solaire d'un emplacement. Ce système permet d'appliquer concrètement des connaissances en électronique, énergie, programmation et outils d'acquisition.
+        </p>
+        
+        <h3>Objectifs Techniques :</h3>
+        <ul>
+            <li>Mesurer en temps réel les grandeurs physiques : <strong>Puissance</strong>, <strong>Température</strong>, <strong>Inclinaison</strong>, <strong>Radiation</strong>, <strong>Orientation</strong>, et <strong>Position GPS</strong>.</li>
+            <li>Traiter et superviser ces données sur ordinateur via une IHM développée sous <strong>LabVIEW</strong>.</li>
+            <li>Programmer le microcontrôleur pour piloter l’ensemble des fonctionnalités de l’AGS.</li>
+        </ul>
+
+        <h2>Interface Homme-Machine (IHM) et Supervision LabVIEW</h2>
+        <p>
+            J'ai entièrement réalisé l'application sous <strong>LabVIEW</strong> qui sert d'interface de supervision. Cette IHM permet la visualisation claire du comportement du panneau solaire en fonction des paramètres mesurés.
+        </p>
+
+        <h3>Développement de l'IHM</h3>
+        <ul>
+            <li><strong>Acquisition des Capteurs :</strong> Lecture et monitoring en temps réel des mesures (tension, courant, température).</li>
+            <li><strong>Communication USB :</strong> Mise en place de la liaison PC ↔ microcontrôleur via une DLL USB pour le transfert des données.</li>
+            <li><strong>Visualisation :</strong> Affichage de la version du logiciel embarqué et visualisation des variations de tension et de température via des graphes dynamiques.</li>
+            <li><strong>Supervision des Modules :</strong> Lecture des données GPS et de la boussole.</li>
+        </ul>
+        
+        <h2>Détails Visuels (Interface et Code)</h2>
+
+        <h3>Face Avant (Interface Utilisateur)</h3>
+        <p>Affichage des indicateurs de contrôle et des données GPS/Mesures en temps réel.</p>
+        <img src="images/PSAE3.1_2.png" alt="Interface LabVIEW de la Face Avant de l'AGS (Interface Utilisateur)" title="IHM LabVIEW - Face Avant">
+        
+        <p>Visualisation des données lors d'un cycle de test, affichant la courbe de puissance en fonction du temps.</p>
+        <img src="images/PSAE3.1_1.png" alt="Face avant de l'IHM LabVIEW lors d'un test de mesure" title="IHM LabVIEW - Test des capteurs">
+
+        <h2>Programmation Embarquée et Acquisition</h2>
+        <p>
+            J'ai programmé le microcontrôleur pour gérer les acquisitions analogiques et les temporisations essentielles au système, en utilisant l'environnement <strong>MPLAB</strong>. 
+            Le microcontrôleur utilisé sur la carte était un modèle de substitution (non spécifié) à celui demandé dans la documentation, nécessitant un ajustement des registres pour la programmation.
+        </p>
+
+        <h3>Gestion des Temporisations en C</h3>
+        <p>
+            La gestion temporelle précise des cycles d'acquisition, cruciale pour l'AGS, a été réalisée via la programmation des **Timers** du microcontrôleur. Le programme ci-dessous illustre la fonction de temporisation basée sur le Timer0.
+        </p>
+        
+        <pre><code class="language-c">
+void TimStart(unsigned int Duree)
+{
+    // Calcul de la valeur de préchargement pour le Timer0 (TMR0)
+    unsigned long ticks = ((unsigned long)Duree * (16000000UL / 1000UL)) / (4UL * 256);
+    int preload = 65536 - ticks;
+
+    // Chargement de la valeur calculée dans TMR0
+    TMR0H = (preload >> 8) & 0xFF;
+    TMR0L = preload & 0xFF;
+
+    // Clear flag et démarrage du Timer
+    INTCONbits.TMR0IF = 0;
+    T0CONbits.TMR0ON = 1;
+
+    // Attente du débordement (période de temps écoulée)
+    while (!INTCONbits.TMR0IF);
+
+    // Arrêt et réinitialisation
+    T0CONbits.TMR0ON = 0;
+    INTCONbits.TMR0IF = 0;
+}
+        </code></pre>
+        <p class="legende-code">Extrait de code C illustrant la mise en œuvre de la fonction de temporisation basée sur le Timer0.</p>
+
+        <h3>Diagramme LabVIEW (Code Logiciel)</h3>
+        <p>Structure du programme LabVIEW montrant la logique d'acquisition, de gestion des communications USB et du traitement des données.</p>
+        <img src="images/PSAE3.1_3.png" alt="Diagramme de LabVIEW du programme AGS" title="Diagramme LabVIEW (Code)">
+
+        <h2>Compétences et Bilan Personnel</h2>
+        <p>
+            Ce projet a été formateur et a nécessité une forte autonomie face aux défis rencontrés (matériel non standard, prise en main de LabVIEW sans guidage).
+        </p>
+        
+        <div class="competences-list">
+            <h3>Compétences Développées sur ce Projet</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Compétence</th>
+                        <th>Détail de la compétence</th>
+                        <th>Niveau d’acquisition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Programmation LabVIEW</strong></td>
+                        <td>Développement d'une application complexe (IHM) en langage G, gestion des structures, interface utilisateur.</td>
+                        <td class="barre-cell">
+                            <div class="barre-progression" data-level="75"><div class="barre-interne"></div><span class="pourcentage">75%</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Autonomie et Apprentissage</strong></td>
+                        <td>Prise en main d'un nouvel environnement (LabVIEW) avec peu de guidage, recherche de solutions par l'expérimentation.</td>
+                        <td class="barre-cell">
+                            <div class="barre-progression" data-level="85"><div class="barre-interne"></div><span class="pourcentage">85%</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Intégration et Test Matériel/Logiciel</strong></td>
+                        <td>Validation du fonctionnement de l'IHM avec le matériel réel, diagnostic des pannes et incohérences.</td>
+                        <td class="barre-cell">
+                            <div class="barre-progression" data-level="70"><div class="barre-interne"></div><span class="pourcentage">70%</span></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="vagues-footer">
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/rapha%C3%ABl-champion/" target="_blank" title="Mon profil LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="javascript:void(0)" onclick="copyToClipboard('champion.raphael77@gmail.com', 'Adresse e-mail copiée !')" title="Copier l'e-mail"><i class="fas fa-envelope"></i></a>
+            <a href="javascript:void(0)" onclick="copyToClipboard('0680115875', 'Numéro de téléphone copiée !')" title="Copier le numéro de téléphone"><i class="fas fa-phone"></i></a>
+            <a href="tous-les-projets.html" title="Voir tous les projets"><i class="fas fa-layer-group"></i></a>
+        </div>
+        <div class="vague-container">
+            <div class="vague vague1"></div>
+            <div class="vague vague2"></div>
+            <div class="vague vague3"></div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+
+    <script>
+        // Masque le lien vers la page actuelle dans le menu déroulant
+        document.querySelector('.panel-projets a[href="projet-ags.html"]').style.display = 'none';
+    </script>
+
+</body>
+</html>
