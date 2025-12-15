@@ -180,8 +180,6 @@
 * Sections compétences (Hard & Soft Skills) structurées et complétées.
 * **Mise à jour du CV** vers la dernière version et lien corrigé dans la section Contact.
 
----
-
 # Version V1.1 (18 Octobre 2025)
 *Statut : Corrections UX et ajustements visuels post-déploiement.*
 
@@ -196,3 +194,18 @@
 * **Tableaux Responsive :** Les titres ("Compétence :", "Détail :", etc.) dans la vue mobile sont désormais centrés.
 * **Navigation Responsive :** Les éléments du menu sont maintenant correctement alignés verticalement sur mobile.
 * **Languette du Logo :** Positionnement et timing d'apparition/disparition corrigés pour une interaction logique et sans décalage visuel. Le logo se cache maintenant complètement.
+
+# Version V1.2 (15 Décembre 2025)
+*Statut : Ajout de projets majeurs de 2ème année et mise à jour de la structure.*
+
+### 🚀 Nouvelles Fonctionnalités & Contenu
+**Ajout de Nouveaux Projets (2ème année) :**
+* **Analyseur Gisement Solaire (AGS) :** Création de la page dédiée `projet-ags.html` avec description détaillée de l'IHM LabVIEW et des défis matériels.
+* **Automatisation d'un Escalier Mécanique :** Création de la page dédiée `projet-escalator.html` mettant en avant la logique séquentielle, les chronogrammes et la traduction en équations.
+* **Mise à jour des Listes :** Les deux nouveaux projets ont été ajoutés en tête des listes sur la page d'accueil et la page "Tous les projets" pour respecter l'ordre chronologique inverse (plus récent en premier).
+
+**Navigation :**
+* **Menu Déroulant Global :** Mise à jour du code du menu de navigation sur l'ensemble des fichiers HTML pour inclure les liens vers les nouveaux projets.
+
+### ✅ Corrections de Bugs (Fixes)
+* **Barre de Navigation (AGS) :** Correction d'un bug de classe CSS (`actif`) qui positionnait mal l'indicateur de navigation sur la page `projet-ags.html`.
