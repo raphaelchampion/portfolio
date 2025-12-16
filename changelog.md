@@ -209,3 +209,17 @@
 
 ### ✅ Corrections de Bugs (Fixes)
 * **Barre de Navigation (AGS) :** Correction d'un bug de classe CSS (`actif`) qui positionnait mal l'indicateur de navigation sur la page `projet-ags.html`.
+
+# Version V1.2.2 (16 Décembre 2025)
+*Statut : Ajout de deux projets majeurs (2ème année) et correctifs d'affichage mobile.*
+
+### 🚀 Nouveaux Projets & Contenu
+* **Compétences :** Ajout des sections "Soft Skills" (Travail en binôme, Autonomie, Rigueur) et des tableaux de compétences techniques spécifiques pour ces deux nouveaux projets.
+
+### ✨ Améliorations de la Structure
+**Réorganisation Chronologique :**
+* Mise à jour de la page d'accueil (`index.html`) et de la liste complète (`tous-les-projets.html`) pour afficher les projets les plus récents (Escalier & AGS) en premier.
+* Mise à jour du menu déroulant de navigation sur l'ensemble des pages du site.
+
+### 🐛 Corrections de Bugs (Mobile & Navigation)
+* **AFFICHAGE MOBILE CRITIQUE (AGS) :** Suppression d'un bloc de code HTML dupliqué dans le `<header>` de la page `projet-ags.html` qui créait une **double barre de navigation** sur les téléphones.
