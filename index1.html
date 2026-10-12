@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Raphaël CHAMPION - V3</title>
+    <link rel="stylesheet" href="style1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+</head>
+<body>
+
+    <header class="barre-superieure">
+        <div class="bloc-logo">
+            <a href="index1.html#accueil" class="lien-logo">
+                <span class="nom-site">Portfolio Raphaël CHAMPION</span>
+            </a>
+        </div>
+        <nav class="menu">
+            <a href="#accueil" class="lien actif" data-section="accueil">Accueil</a>
+            
+            <div class="lien-conteneur-projets">
+                <a href="#experiences" class="lien" data-section="experiences">Expériences</a>
+                <div class="panel-projets">
+                    <a href="experience-equinix1.html">Stage Equinix PA7</a>
+                    <a href="toutes-les-experiences1.html">Toutes les expériences...</a>
+                </div>
+            </div>
+
+            <div class="lien-conteneur-projets">
+                <a href="#projets" class="lien projets" data-section="projets">Projets</a>
+                <div class="panel-projets">
+                    <a href="projet-escalator1.html">Automatisation d'un Escalier</a>
+                    <a href="projet-ags1.html">Analyseur Gisement Solaire</a>
+                    <a href="projet-robot1.html">Robot autonome</a>
+                    <a href="projet-vae1.html">Vélo Assistance Électrique</a>
+                    <a href="projet-roomba1.html">Projet Roomba</a>
+                    <a href="projet-alarme1.html">Système d'alarme</a>
+                    <a href="projet-lego1.html">Robot LEGO Mindstorm</a>
+                    <a href="tous-les-projets1.html">Voir tous les projets...</a>
+                </div>
+            </div>
+            
+            <a href="#competences" class="lien" data-section="competences">Compétences</a>
+            <a href="#savoirplus" class="lien" data-section="savoirplus">Contact & Bilan</a>
+            <div class="bulle"></div>
+        </nav>
+    </header>
+
+    <main class="contenu-principal">
+        
+        <section id="accueil" class="section-contenu">
+            <div class="a-propos-detail carte-unifiee"> 
+                <h1>Bonjour, je suis Raphaël Champion.</h1> 
+                <p>Depuis toujours, je suis passionné par les systèmes complexes et les environnements techniques exigeants. Qu'il s'agisse de la précision de la signalisation ferroviaire, de la haute technologie en Formule 1 ou de la rigueur aéronautique, concrétisée par l'obtention de mon Brevet d’Initiation à l’Aéronautique (BIA), j'ai toujours cherché à comprendre le cœur électrique de ces infrastructures.</p>
+                
+                <p>Aujourd'hui en 3ᵉ année de BUT GEII (parcours Électricité et Maîtrise de l’Énergie), j'ai développé une solide expertise sur les installations basse et moyenne tension, la distribution de puissance (TGBT, transformateurs, secours) et la supervision. Mon expérience sur le terrain lors d'un stage en Data Center m'a transmis la rigueur des sites critiques, où la continuité de service et la sécurité électrique sont primordiales.</p>
+
+                <p>Animé par le souhait d'appliquer mes compétences dans le secteur des transports guidés, je recherche un stage de 14 semaines en maintenance du réseau ferroviaire pour finaliser mon diplôme. Motivé à apprendre aux côtés de techniciens et d'ingénieurs expérimentés, je suis disponible pour échanger sur vos opportunités.</p>
+            </div>
+        </section>
+
+        <section id="experiences" class="section-contenu">
+            <h2>Expériences Professionnelles</h2>
+            <div class="container-projets">
+                <article class="carte-projet">
+                    <div class="badge-date">Avril - Juillet 2026</div>
+                    <h3>Stage Assistant Ingénieur - Equinix PA7</h3>
+                    <p>Immersion au cœur d'un Data Center mondial : gestion de la puissance électrique, du refroidissement et de la continuité de service.</p>
+                    <a href="experience-equinix1.html" class="btn-savoir-plus">Détails de l'expérience &rarr;</a>
+                </article>
+
+                <article class="carte-projet" style="opacity: 0.6; border: 2px dashed #ccc; background: none; box-shadow: none;">
+                    <h3>Prochaine Expérience</h3>
+                    <p>En recherche active d'un stage de 14 semaines en maintenance du réseau ferroviaire (3ᵉ année BUT GEII).</p>
+                </article>
+            </div>
+            <p class="voir-tout" style="margin-top: 25px;"><a href="toutes-les-experiences1.html">Consulter mon parcours professionnel complet &rarr;</a></p>
+        </section>
+
+        <section id="projets" class="section-contenu">
+            <h2>Mes Projets Techniques</h2>
+            <div class="container-projets">
+                <article id="escalator" class="carte-projet">
+                    <h3>Automatisation d'un Escalier Mécanique</h3>
+                    <p>Modernisation d'un système : passage d'une logique câblée à une logique programmée (API) avec gestion de flux.</p>
+                    <a href="projet-escalator1.html" class="btn-savoir-plus">Détails</a>
+                </article>
+
+                <article id="ags" class="carte-projet">
+                    <h3>Analyseur Gisement Solaire</h3>
+                    <p>Développement d'une IHM LabVIEW pour un système d'acquisition de données solaires.</p>
+                    <a href="projet-ags1.html" class="btn-savoir-plus">Détails</a>
+                </article>
+
+                <article id="robot-autonome" class="carte-projet">
+                    <h3>Robot autonome</h3>
+                    <p>Programmation d'un robot mobile avec modes manuel et autonome sur base Arduino.</p>
+                    <a href="projet-robot1.html" class="btn-savoir-plus">Détails</a>
+                </article>
+
+                <article id="velo-vae" class="carte-projet">
+                    <h3>Vélo Assistance Électrique (VAE)</h3>
+                    <p>Conception d'une carte de commande pour la variation de vitesse d'un moteur.</p>
+                    <a href="projet-vae1.html" class="btn-savoir-plus">Détails</a>
+                </article>
+
+                <article id="roomba" class="carte-projet">
+                    <h3>Projet Roomba</h3>
+                    <p>Conception d'un circuit de détection du vide avec capteurs et logique intégrée.</p>
+                    <a href="projet-roomba1.html" class="btn-savoir-plus">Détails</a>
+                </article>
+
+                <article id="alarme" class="carte-projet">
+                    <h3>Système d'alarme</h3>
+                    <p>Conception de logique numérique sur Quartus pour un système de sécurité.</p>
+                    <a href="projet-alarme1.html" class="btn-savoir-plus">Détails</a>
+                </article>
+
+                <article id="robot-lego" class="carte-projet">
+                    <h3>Robot LEGO Mindstorm</h3>
+                    <p>Analyse et optimisation d'un robot pour une mission de récupération d'échantillons.</p>
+                    <a href="projet-lego1.html" class="btn-savoir-plus">Détails</a>
+                </article>
+            </div>
+            <p class="voir-tout" style="margin-top: 25px;"><a href="tous-les-projets1.html">Voir les fiches techniques complètes de mes projets &rarr;</a></p>
+        </section>
+
+        <section id="competences" class="section-contenu">
+            <h2>Compétences, Formation & Langues</h2>
+            
+            <div class="bloc-competences">
+                <div class="qualifications carte-unifiee">
+                    <h3>Formations</h3>
+                    <div class="carte-formation">
+                        <strong>Sept. 2024 - Présent</strong>
+                        <span>BUT GEII (Électricité et Maîtrise de l'Énergie) — Université Sorbonne Paris Nord</span>
+                        <a href="https://www.google.fr/maps/place/Universit%C3%A9+Sorbonne+Paris+Nord/@48.9564303,2.3392341,17z" target="_blank" class="emplacement-lien">📍 Voir l'emplacement</a>
+                    </div>
+                    <div class="carte-formation">
+                        <strong>Juin 2024</strong>
+                        <span>Baccalauréat Général — Lycée Charles de Gaulle</span>
+                        <a href="https://www.google.fr/maps/place/Lyc%C3%A9e+Charles+De+Gaulle/@49.0471568,2.6643913,16.6z/data=!4m6!3m5!1s0x47e622d9b54002bd:0x5b2053a646ec14e2!8m2!3d49.0478364!4d2.6685132!16s%2Fg%2F1tfk_hrc?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="emplacement-lien">📍 Voir l'emplacement</a>
+                    </div>
+                    <div class="carte-formation">
+                        <strong>Juin 2023</strong>
+                        <span>Brevet d’Initiation à l’Aéronautique (BIA) — Lycée Charles de Gaulle</span>
+                        <a href="https://www.google.fr/maps/place/Lyc%C3%A9e+Charles+De+Gaulle/@49.0471568,2.6643913,16.6z/data=!4m6!3m5!1s0x47e622d9b54002bd:0x5b2053a646ec14e2!8m2!3d49.0478364!4d2.6685132!16s%2Fg%2F1tfk_hrc?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="emplacement-lien">📍 Voir l'emplacement</a>
+                    </div>
+                </div>
+
+                <div class="langues-progress carte-unifiee">
+                    <h3>Langues</h3>
+                    <div class="langue-bloc-carte"><div class="langue-item"><span class="langue-nom"><img src="https://flagcdn.com/w20/fr.png" alt="FR" class="drapeau-svg"> Français (Maternelle)</span><div class="barre-progression langue-barre" data-level="100"><div class="barre-interne"></div><span class="pourcentage">100%</span></div></div></div>
+                    <div class="langue-bloc-carte"><div class="langue-item"><span class="langue-nom"><img src="https://flagcdn.com/w20/gb.png" alt="GB" class="drapeau-svg"> Anglais (Intermédiaire)</span><div class="barre-progression langue-barre" data-level="60"><div class="barre-interne"></div><span class="pourcentage">60%</span></div></div></div>
+                    <div class="langue-bloc-carte"><div class="langue-item"><span class="langue-nom"><img src="https://flagcdn.com/w20/de.png" alt="DE" class="drapeau-svg"> Allemand (Débutant)</span><div class="barre-progression langue-barre" data-level="25"><div class="barre-interne"></div><span class="pourcentage">25%</span></div></div></div>
+                </div>
+            </div>
+            
+            <div class="competences-list">
+                <h3>🛠️ Hard Skills (Compétences Techniques)</h3>
+                <table>
+                    <thead><tr><th>Compétence</th><th>Détail / Application</th><th>Niveau Visuel</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Culture & Infrastructure Data Center</strong></td><td>Supervision BMS/GTC, continuité de service, chaînes de secours et réseaux optiques (Stage Equinix).</td><td class="barre-cell"><div class="barre-progression" data-level="85"><div class="barre-interne"></div><span class="pourcentage">85%</span></div></td></tr>
+                        <tr><td><strong>Supervision & IHM</strong></td><td>Développement d'interfaces sous LabVIEW, communication USB/Série et traitement de données.</td><td class="barre-cell"><div class="barre-progression" data-level="75"><div class="barre-interne"></div><span class="pourcentage">75%</span></div></td></tr>
+                        <tr><td><strong>Automatisme Industriel</strong></td><td>Programmation d'automates, conversion GRAFCET vers équations logiques, schémas électriques.</td><td class="barre-cell"><div class="barre-progression" data-level="80"><div class="barre-interne"></div><span class="pourcentage">80%</span></div></td></tr>
+                        <tr><td><strong>Programmation Embarquée</strong></td><td>Programmation C/C++ sur Arduino/PIC, gestion de capteurs (ultrasons, IR) et actionneurs.</td><td class="barre-cell"><div class="barre-progression" data-level="70"><div class="barre-interne"></div><span class="pourcentage">70%</span></div></td></tr>
+                        <tr><td><strong>Conception Logique Numérique</strong></td><td>Utilisation de Quartus, tables de vérité, Karnaugh et schémas logiques.</td><td class="barre-cell"><div class="barre-progression" data-level="75"><div class="barre-interne"></div><span class="pourcentage">75%</span></div></td></tr>
+                        <tr><td><strong>Instrumentation & Mesures</strong></td><td>Oscilloscope, multimètre, réflectomètre (fibre optique) et tests de liaisons.</td><td class="barre-cell"><div class="barre-progression" data-level="80"><div class="barre-interne"></div><span class="pourcentage">80%</span></div></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="competences-list">
+                <h3>🤝 Soft Skills (Compétences Comportementales)</h3>
+                <table class="soft-skills-table">
+                    <thead><tr><th>Compétence</th><th>Mise en application</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Autonomie & Initiative</strong></td><td>Rondes de supervision, gestion d'alarmes en site critique et recherche autonome de solutions.</td></tr>
+                        <tr><td><strong>Travail d'équipe & Communication</strong></td><td>Collaboration étroite avec les équipes Facilities/Customer Operations et travail en binôme.</td></tr>
+                        <tr><td><strong>Rigueur & Méthodologie</strong></td><td>Application stricte des règles de sécurité industrielle et réécriture de procédures opérationnelles (SOP).</td></tr>
+                        <tr><td><strong>Résolution de Problèmes</strong></td><td>Diagnostic d'anomalies matérielles, réseaux et logicielles en environnement temps réel.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="savoirplus" class="section-contenu">
+            <h2>Contact & Ressources</h2>
+            <div class="container-contact">
+                <article class="carte-contact"><h3>Mes Coordonnées 📞</h3><p><strong>Email :</strong> champion.raphael77@gmail.com</p><p><strong>Téléphone :</strong> 06 80 11 58 75</p><p><strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/rapha%C3%ABl-champion/" target="_blank">Profil Raphaël CHAMPION</a></p></article>
+                <article class="carte-contact"><h3>Mon Curriculum Vitae 📄</h3><p>Pour en savoir plus sur <strong>mon parcours d'études</strong> :</p><a href="https://drive.google.com/file/d/19OkbXMgTel8gWG_DZ1LKUIzZOwgGxHVt/view?usp=drive_link" target="_blank" class="btn-telecharger">Télécharger mon CV (PDF)</a></article>
+                <article class="carte-contact"><h3>Formulaire de contact 📧</h3><p>Me contacter directement via un formulaire en ligne dédié :</p><a href="contact-form1.html" class="btn-savoir-plus">Accéder au Formulaire</a></article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="vagues-footer">
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/rapha%C3%ABl-champion/" target="_blank" title="Mon profil LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="javascript:void(0)" onclick="copyToClipboard('champion.raphael77@gmail.com', 'Adresse e-mail copiée !')" title="Copier l'e-mail"><i class="fas fa-envelope"></i></a>
+            <a href="javascript:void(0)" onclick="copyToClipboard('0680115875', 'Numéro de téléphone copié !')" title="Copier le numéro de téléphone"><i class="fas fa-phone"></i></a>
+            <a href="toutes-les-experiences1.html" title="Toutes les expériences"><i class="fas fa-briefcase"></i></a>
+            <a href="tous-les-projets1.html" title="Voir tous les projets"><i class="fas fa-layer-group"></i></a>
+            <a href="index1.html" title="Accueil"><i class="fas fa-home"></i></a>
+        </div>
+        <div class="vague-container">
+            <div class="vague vague1"></div>
+            <div class="vague vague2"></div>
+            <div class="vague vague3"></div>
+        </div>
+    </footer>
+
+    <script src="main1.js"></script>
+</body>
+</html>

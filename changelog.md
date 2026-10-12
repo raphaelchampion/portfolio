@@ -223,3 +223,27 @@
 
 ### 🐛 Corrections de Bugs (Mobile & Navigation)
 * **AFFICHAGE MOBILE CRITIQUE (AGS) :** Suppression d'un bloc de code HTML dupliqué dans le `<header>` de la page `projet-ags.html` qui créait une **double barre de navigation** sur les téléphones.
+
+# Version V1.3.0 (Octobre 2026)
+*Statut : Harmonisation globale de la navigation, refonte narrative de l'accueil et mise à jour du profil professionnel.*
+
+### 🚀 Nouvelles Fonctionnalités & Contenu
+* **Profil & Présentation d'Accueil (`index1.html`) :** 
+  * Refonte complète du texte de présentation sous forme narrative et fluide (suppression de la liste à puces rigide pour une lecture optimisée en moins d'une minute).
+  * Intégration du positionnement vers la recherche d'un stage de fin d'études de 14 semaines (début mars 2027) tout en mettant en valeur les passions clés (ferroviaire, Formule 1, BIA/aéronautique, Data Center).
+* **Section Expériences Professionnelles :**
+  * Création de la fiche d'expérience détaillée pour le stage chez Equinix PA7 (`experience-equinix1.html`).
+  * Création de la vue d'ensemble du parcours professionnel (`toutes-les-experiences1.html`).
+  * Intégration de la section dédiée `#experiences` sur la page d'accueil.
+* **Mise à Jour des Formations :** Correction de l'URL Google Maps exacte du Lycée Charles de Gaulle et restauration des liens cliquables 📍 sous chaque diplôme.
+
+### 🎨 Navigation & Ergonomie
+* **Menu à 5 Onglets Unifié :** Généralisation du menu déroulant "Expériences" sur l'ensemble des fiches du site.
+* **Standardisation des Fichiers (`1`) :** Bascule intégrale du site vers les fichiers suffixés (`index1.html`, `style1.css`, `main1.js`, etc.).
+* **Accessibilité du Logo :** Intégration du lien cliquable sur le logo du header pour un retour direct à l'accueil.
+* **Footer Interactif :** Ajout de l'icône mallette (`<i class="fas fa-briefcase"></i>`) dans le footer sur toutes les pages pour un accès rapide aux expériences.
+
+### 🛠️ Correctifs Techniques (Fixes)
+* **Suppression des En-têtes Dupliqués :** Nettoyage des balises `<header>` en double sur `projet-escalator1.html` et `projet-roomba1.html`.
+* **Correction Doctype :** Restauration de la structure HTML standard sur `projet-lego1.html`.
+* **Mise en Page CSS :** Ajustement des styles pour les cartes de formation et les liens d'emplacement pour éliminer les coquilles d'affichage.

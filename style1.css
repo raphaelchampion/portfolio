@@ -1,5 +1,5 @@
 /* ---------------------------------------------------- */
-/* 11. DESIGN GLOBAL & RESET */
+/* 1. DESIGN GLOBAL & RESET */
 /* ---------------------------------------------------- */
 :root {
     --couleur-fond-principal: #f8f8f8; 
@@ -38,12 +38,12 @@ html {
     width: 10px; 
     height: 0; 
     background-color: rgba(30, 144, 255, 0.6);
-    z-index: 99; 
+    z-index: 1001; 
     transition: height 0.1s linear;
 }
 
 /* ---------------------------------------------------- */
-/* 3. HEADER & NAVIGATION */
+/* 2. HEADER & NAVIGATION (OPTIMISÉ 5 ONGLETS V3) */
 /* ---------------------------------------------------- */
 .barre-superieure {
     position: sticky;
@@ -54,7 +54,7 @@ html {
     background: var(--couleur-fond-bloc);
     height: var(--hauteur-nav);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 100; 
+    z-index: 1000; 
     transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
 }
 
@@ -63,7 +63,7 @@ html {
     left: 0;
     top: 0;
     height: var(--hauteur-nav);
-    width: 280px; 
+    width: 240px; 
     background: var(--couleur-texte); 
     display: flex;
     align-items: center;
@@ -71,16 +71,26 @@ html {
     transition: transform 0.4s ease-in-out, opacity 0.3s ease;
 }
 
+.lien-logo {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
 .nom-site {
     color: white;
     font-weight: bold;
-    font-size: 1.4rem;
-    padding-left: 20px; 
+    font-size: 1.2rem;
+    padding-left: 15px; 
 }
 
 .menu {
     display: flex;
-    gap: 40px;
+    gap: 25px; 
     position: relative;
     height: 100%;
     align-items: center; 
@@ -91,10 +101,11 @@ html {
     text-decoration: none;
     color: var(--couleur-texte);
     font-weight: bold;
-    padding: 0 15px;
+    padding: 0 10px;
     height: 100%;
     display: flex;
     align-items: center;
+    font-size: 0.95rem;
 }
 
 .bulle {
@@ -104,10 +115,11 @@ html {
     width: 0;
     background: var(--couleur-texte); 
     border-radius: 2px;
-    transition: all 0.4s ease-in-out; 
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
     z-index: 1;
 }
 
+/* Panneaux déroulants du menu */
 .lien-conteneur-projets {
     position: relative;
     display: flex;
@@ -122,13 +134,14 @@ html {
     transform: translateX(-50%);
     display: none; 
     background: var(--couleur-fond-bloc);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
     border-radius: 8px;
     padding: 10px 0;
-    min-width: 240px;
+    min-width: 250px;
     flex-direction: column;
-    z-index: 50;
+    z-index: 500;
     pointer-events: none; 
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .lien-conteneur-projets:hover .panel-projets,
@@ -138,10 +151,12 @@ html {
 }
 
 .panel-projets a {
-    padding: 10px 20px;
+    padding: 12px 20px;
     text-decoration: none;
     color: var(--couleur-texte);
     font-weight: 500;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .panel-projets a:hover {
@@ -150,13 +165,28 @@ html {
 }
 
 /* ---------------------------------------------------- */
-/* MAIN CONTENT & SECTIONS */
+/* 3. SECTION EXPÉRIENCES & BADGES (V3) */
+/* ---------------------------------------------------- */
+.badge-date {
+    display: inline-block;
+    background-color: var(--couleur-texte);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ---------------------------------------------------- */
+/* 4. CONTENU PRINCIPAL & CARTES */
 /* ---------------------------------------------------- */
 .contenu-principal {
     max-width: 1400px;
     margin: 0 auto;
     padding: 60px 80px 40px 80px;
-    padding-bottom: 0; 
 }
 
 .section-contenu {
@@ -175,44 +205,115 @@ html {
     margin-bottom: 25px;
     font-size: 1.1rem; 
 }
+
 .a-propos-detail p:last-child {
     margin-bottom: 0;
 }
 
-.section-contenu p, .section-contenu li {
-    font-size: 1.05rem;
-}
-
 .container-projets {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
     margin-top: 40px;
 }
 
 .carte-projet {
     background-color: var(--couleur-fond-bloc);
-    padding: 30px;
-    border-radius: 8px;
+    padding: 35px;
+    border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    transform: translateY(0);
+    display: flex;
+    flex-direction: column;
 }
 
 .carte-projet:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
 }
 
 .btn-savoir-plus {
     display: inline-block;
-    margin-top: 15px;
+    margin-top: auto;
+    padding-top: 15px;
     color: var(--couleur-primaire);
     text-decoration: none;
     font-weight: bold;
 }
 
 /* ---------------------------------------------------- */
-/* 8. SECTION COMPÉTENCES */
+/* 5. PAGES PROJETS & EXPÉRIENCES DÉTAILLÉES */
+/* ---------------------------------------------------- */
+.header-projet {
+    padding: 60px 80px;
+    background-color: var(--couleur-texte); 
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.header-projet h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.header-projet p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.contenu-projet {
+    padding: 50px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.introduction-projet {
+    font-style: italic;
+    font-size: 1.15rem;
+    color: #444;
+    margin-bottom: 40px;
+    padding: 15px 20px;
+    border-left: 4px solid var(--couleur-primaire);
+    background-color: rgba(30, 144, 255, 0.05);
+    border-radius: 0 8px 8px 0;
+    line-height: 1.7;
+}
+
+.contenu-projet h2 {
+    color: var(--couleur-primaire);
+    border-bottom: 2px solid var(--couleur-fond-principal);
+    padding-bottom: 10px;
+    margin-top: 45px;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+}
+
+.contenu-projet h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: var(--couleur-texte);
+    font-size: 1.25rem;
+}
+
+.contenu-projet p {
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+.contenu-projet ul, .contenu-projet ol {
+    margin-left: 25px;
+    margin-bottom: 25px;
+}
+
+.contenu-projet li {
+    margin-bottom: 12px;
+    line-height: 1.7;
+}
+
+/* ---------------------------------------------------- */
+/* 6. SECTION COMPÉTENCES */
 /* ---------------------------------------------------- */
 .bloc-competences {
     display: grid;
@@ -254,22 +355,11 @@ html {
     align-self: flex-start;
 }
 
-.langues-progress {
-    /* Hérite des styles .carte-unifiee */
-}
-
 .langue-bloc-carte {
     padding: 15px;
     border-radius: 6px;
     margin-bottom: 15px;
     border: 1px solid var(--couleur-fond-principal); 
-    background-color: transparent; 
-}
-
-.langue-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .drapeau-svg {
@@ -281,25 +371,8 @@ html {
     vertical-align: middle;
 }
 
-.langue-nom {
-    display: inline-block;
-    width: 35%;
-    font-size: 1.1rem;
-    font-weight: bold;
-}
-
-.barre-progression.langue-barre {
-    width: 60%;
-    height: 18px; 
-}
-
 .competences-list {
     margin-bottom: 50px;
-}
-
-.competences-list h3 {
-    margin-bottom: 20px;
-    color: var(--couleur-texte);
 }
 
 .competences-list table {
@@ -311,25 +384,15 @@ html {
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-.competences-list th, 
-.competences-list td {
-    padding: 15px;
+.competences-list th, .competences-list td {
+    padding: 15px 20px;
     text-align: left;
     border-bottom: 1px solid var(--couleur-fond-principal);
 }
 
-.competences-list td:first-child {
-    font-weight: 500;
-}
-
-.competences-list th:nth-child(3), 
-.competences-list td:nth-child(3) {
-    width: 25%;
-}
-
-.soft-skills-table th:first-child,
-.soft-skills-table td:first-child {
-    width: 30%;
+.competences-list th {
+    background-color: rgba(30, 144, 255, 0.1);
+    font-weight: bold;
 }
 
 .barre-progression {
@@ -356,71 +419,11 @@ html {
     font-size: 0.8em;
     font-weight: bold;
     color: var(--couleur-texte); 
-    mix-blend-mode: normal; 
     z-index: 1; 
 }
 
 /* ---------------------------------------------------- */
-/* 12. PAGES PROJETS */
-/* ---------------------------------------------------- */
-.header-projet {
-    padding: 60px 80px;
-    background-color: var(--couleur-texte); 
-    color: white;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
-    border-top: 2px solid rgba(255, 255, 255, 0.5);
-}
-
-.header-projet h1 {
-    font-size: 2.8rem;
-    margin-bottom: 5px;
-}
-
-.header-projet p {
-    font-size: 1.3rem;
-    font-weight: 300;
-    opacity: 0.9;
-}
-
-.contenu-projet {
-    padding: 40px 80px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.contenu-projet h2 {
-    color: var(--couleur-primaire);
-    border-bottom: 2px solid var(--couleur-fond-principal);
-    padding-bottom: 10px;
-    margin-top: 50px;
-    margin-bottom: 20px;
-}
-
-.contenu-projet h3 {
-    margin-top: 30px;
-    color: var(--couleur-texte);
-}
-
-.contenu-projet ul, .contenu-projet ol {
-    margin-left: 20px;
-    padding-bottom: 20px;
-}
-
-.introduction-projet {
-    font-style: italic;
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 40px;
-    padding-left: 20px;
-    border-left: 3px solid var(--couleur-primaire);
-}
-
-.contenu-projet p {
-    text-align: justify;
-}
-
-/* ---------------------------------------------------- */
-/* 9. SECTION CONTACT */
+/* 7. SECTION CONTACT & FORMULAIRE */
 /* ---------------------------------------------------- */
 .container-contact {
     display: grid;
@@ -436,8 +439,6 @@ html {
     box-shadow: 0 6px 15px rgba(0,0,0,0.08);
     border: 1px solid rgba(200, 200, 200, 0.5);
     border-top: 5px solid var(--couleur-primaire); 
-    backdrop-filter: blur(5px); 
-    -webkit-backdrop-filter: blur(5px);
 }
 
 .carte-contact h3 {
@@ -458,11 +459,43 @@ html {
 
 .btn-telecharger:hover, .carte-contact .btn-savoir-plus:hover {
     background-color: var(--couleur-primaire);
-    color: white;
+}
+
+.formulaire-contact { display: flex; flex-direction: column; gap: 25px; }
+.form-group { display: flex; flex-direction: column; }
+.form-group label { font-weight: bold; margin-bottom: 8px; }
+.form-group input, .form-group textarea { width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: 'Inter', sans-serif; }
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--couleur-primaire); }
+.btn-envoyer { padding: 15px 25px; border: none; border-radius: 6px; background-color: var(--couleur-texte); color: white; font-weight: bold; cursor: pointer; }
+.btn-envoyer:hover { background-color: var(--couleur-primaire); }
+
+/* ---------------------------------------------------- */
+/* 8. MÉDIAS & BLOCS DE CODE */
+/* ---------------------------------------------------- */
+.contenu-projet img, 
+.contenu-projet iframe, 
+.contenu-projet video { 
+    width: 60% !important;
+    max-width: 60% !important;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 8px; 
+    margin: 20px auto; 
+    display: block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+}
+
+.contenu-projet pre[class*="language-"] {
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    overflow: auto;
 }
 
 /* ---------------------------------------------------- */
-/* 5. FOOTER */
+/* 9. FOOTER & VAGUES */
 /* ---------------------------------------------------- */
 .vagues-footer {
     position: relative;
@@ -482,7 +515,6 @@ html {
     padding: 5px 20px;
     background-color: rgba(255, 255, 255, 0.5); 
     backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px); 
     border: 1px solid rgba(255, 255, 255, 0.3); 
     border-radius: 0 0 15px 15px; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -506,7 +538,6 @@ html {
 .footer-links a:hover {
     color: var(--couleur-primaire);
     background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 0 10px rgba(30, 144, 255, 0.3); 
 }
 
 .vague-container {
@@ -529,56 +560,61 @@ html {
 .vague1 { background-image: url('data:image/svg+xml;charset=UTF8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="%23FFFFFF" d="M0 50 C25 80, 75 20, 100 50 L100 100 L0 100 Z" /></svg>'); opacity: 0.9; animation: vague-mouvement 25s linear infinite; z-index: 13; bottom: 0px; }
 .vague2 { background-image: url('data:image/svg+xml;charset=UTF8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="%23FFFFFF" d="M0 50 C25 70, 75 30, 100 50 L100 100 L0 100 Z" /></svg>'); opacity: 0.6; animation: vague-mouvement 20s linear infinite reverse; z-index: 12; bottom: 5px; }
 .vague3 { background-image: url('data:image/svg+xml;charset=UTF8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="%23FFFFFF" d="M0 50 C25 60, 75 40, 100 50 L100 100 L0 100 Z" /></svg>'); opacity: 0.3; animation: vague-mouvement 15s linear infinite; z-index: 11; bottom: 10px; }
+
 @keyframes vague-mouvement { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 /* ---------------------------------------------------- */
-/* 13. FORMULAIRE DE CONTACT */
+/* 10. FOND TORNADE ET HEADER ANIMÉ */
 /* ---------------------------------------------------- */
-.formulaire-contact { display: flex; flex-direction: column; gap: 25px; }
-.form-group { display: flex; flex-direction: column; }
-.form-group label { font-weight: bold; margin-bottom: 8px; color: var(--couleur-texte); }
-.form-group input, .form-group textarea { width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 1rem; background-color: var(--couleur-fond-principal); }
-.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--couleur-primaire); box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.2); }
-.btn-envoyer { padding: 15px 25px; border: none; border-radius: 6px; background-color: var(--couleur-texte); color: white; font-weight: bold; font-size: 1.1rem; cursor: pointer; width: 100%; }
-.btn-envoyer:hover { background-color: var(--couleur-primaire); transform: translateY(-2px); }
+body { position: relative; overflow-x: hidden; }
 
-/* ---------------------------------------------------- */
-/* 14. MEDIAS (IMAGES & VIDÉOS) */
-/* ---------------------------------------------------- */
-.contenu-projet img, 
-.contenu-projet iframe, 
-.contenu-projet video { 
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    max-height: 500px;
-    object-fit: contain;
-    border-radius: 8px; 
-    margin: 20px 0; 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+body::before, body::after {
+    content: '';
+    position: fixed;
+    top: -25vh;
+    left: 0;
+    width: 30vw;
+    height: 150vh;
+    z-index: -1;
+    background: linear-gradient(15deg, rgba(30, 144, 255, 0), rgba(30, 144, 255, 0.12), rgba(30, 144, 255, 0));
+    filter: blur(100px);
+    animation: move-tornado 20s linear infinite;
+}
+
+body::after { animation-delay: -10s; }
+
+@keyframes move-tornado {
+    0% { transform: translateX(-30vw) rotate(-20deg); }
+    100% { transform: translateX(100vw) rotate(10deg); }
+}
+
+.barre-superieure.header-scrolled {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.barre-superieure.header-scrolled .bloc-logo {
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.barre-superieure.header-scrolled:hover .bloc-logo {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
 }
 
 /* ---------------------------------------------------- */
-/* 15. BLOCS DE CODE (PRISM.JS) */
-/* ---------------------------------------------------- */
-.contenu-projet pre[class*="language-"] {
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border: 1px solid #ddd;
-    overflow: auto;
-    font-size: 0.9em;
-}
-
-/* ---------------------------------------------------- */
-/* 18. RESPONSIVE DESIGN */
+/* 11. RESPONSIVE DESIGN */
 /* ---------------------------------------------------- */
 @media (max-width: 1024px) {
     .contenu-principal, .contenu-projet, .header-projet {
         padding-left: 40px;
         padding-right: 40px;
     }
+    .header-projet h1 { font-size: 2rem; }
     .bloc-logo { width: 220px; }
     .nom-site { font-size: 1.2rem; }
 }
@@ -607,167 +643,21 @@ html {
         align-items: center; 
         height: auto; 
     }
-    .lien { 
-        padding: 5px 8px; 
-        height: 35px; 
-        font-size: 0.9rem; 
-    }
-    .lien-conteneur-projets { 
-        height: 35px; 
-    }
-    .bulle { 
-        bottom: 5px; 
-        height: 3px; 
-    }
-    .contenu-principal, .contenu-projet, .header-projet { 
-        padding-left: 15px; 
-        padding-right: 15px; 
-    }
-    #accueil .carte-unifiee h1, 
-    .header-projet h1, 
-    .section-contenu h1 { 
-        font-size: 1.6rem; 
-    }
-    .competences-list table, .soft-skills-table { border: 0; }
-    .competences-list table thead, .soft-skills-table thead { display: none; }
-    .competences-list table tr, .soft-skills-table tr { display: block; margin-bottom: 15px; border-bottom: 2px solid var(--couleur-primaire); padding-bottom: 8px; }
+    .lien { padding: 5px 8px; height: 35px; font-size: 0.9rem; }
+    .bulle { display: none; }
+    .contenu-principal, .contenu-projet, .header-projet { padding-left: 15px; padding-right: 15px; }
     
-    /* -- CORRECTION CENTRAGE MOBILE V6 (Simplifié) -- */
-    .competences-list table td, 
-    .soft-skills-table td { 
-        display: block;        
-        text-align: center; /* On centre tout le texte DANS la cellule */
-        border-bottom: 1px dotted #ccc; 
-        padding: 10px 5px;     
-    }
-    .competences-list table td:last-child, .soft-skills-table td:last-child { border-bottom: 0; }
-    
-    /* On s'assure que le contenu *après* le label ::before est aussi centré */
-    .competences-list td > *:not(::before), 
-    .soft-skills-table td > *:not(::before) {
-        margin-left: auto;
-        margin-right: auto;
+    .contenu-projet img, .contenu-projet iframe, .contenu-projet video { 
+        width: 95% !important; 
+        max-width: 95% !important;
     }
 
-    /* Style et centrage pour le pseudo-élément (label) */
-    .competences-list td::before, 
-    .soft-skills-table td::before { 
-        font-weight: bold; 
-        display: block; 
-        margin-bottom: 8px; 
-        color: var(--couleur-primaire);
-        width: 100%; 
-        text-align: center; 
+    .panel-projets {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        min-width: 100%;
+        background-color: rgba(0,0,0,0.03);
     }
-    /* Rétablissement des labels spécifiques */
-    .competences-list td:first-child::before { content: "Compétence : "; }
-    .competences-list td:nth-child(2)::before { content: "Détail : "; }
-    .competences-list td:nth-child(3)::before { content: "Niveau : "; }
-    .soft-skills-table td:first-child::before { content: "Compétence : "; }
-    .soft-skills-table td:nth-child(2)::before { content: "Mise en application : "; }
-
-    /* Centrage de la barre de progression (bloc) */
-    .competences-list td .barre-progression {
-        margin: 5px auto 0 auto; 
-        max-width: 90%; 
-    }
-    
-    /* On cache la languette en mode mobile */
-    .barre-superieure::before {
-        display: none;
-    }
-}
-
-/* ---------------------------------------------------- */
-/* 19. FOND ANIME "TORNADE" */
-/* ---------------------------------------------------- */
-body {
-    position: relative;
-    overflow-x: hidden;
-}
-
-body::before,
-body::after {
-    content: '';
-    position: fixed;
-    top: -25vh;
-    left: 0;
-    width: 30vw;
-    height: 150vh;
-    z-index: -1;
-    background: linear-gradient(
-        15deg,
-        rgba(30, 144, 255, 0),
-        rgba(30, 144, 255, 0.12),
-        rgba(30, 144, 255, 0.18),
-        rgba(30, 144, 255, 0.12),
-        rgba(30, 144, 255, 0)
-    );
-    filter: blur(100px);
-    animation: move-tornado 20s linear infinite;
-}
-
-body::after {
-    animation-delay: -10s;
-}
-
-@keyframes move-tornado {
-    0% {
-        transform: translateX(-30vw) rotate(-20deg);
-    }
-    100% {
-        transform: translateX(100vw) rotate(10deg);
-    }
-}
-
-/* ---------------------------------------------------- */
-/* 20. HEADER DYNAMIQUE AU DÉFILEMENT */
-/* ---------------------------------------------------- */
-.barre-superieure.header-scrolled {
-    background-color: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.barre-superieure.header-scrolled .bloc-logo {
-    transform: translateX(-100%);
-    opacity: 0;
-    pointer-events: none;
-}
-
-.barre-superieure.header-scrolled:hover .bloc-logo {
-    transform: translateX(0);
-    opacity: 1;
-    pointer-events: auto;
-}
-
-/* ---------------------------------------------------- */
-/* 21. LANGUETTE DYNAMIQUE DU LOGO */
-/* ---------------------------------------------------- */
-.barre-superieure::before {
-    content: '\f054'; 
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: var(--couleur-texte);
-    color: white;
-    padding: 20px 15px;
-    border-radius: 0 10px 10px 0;
-    box-shadow: 3px 0px 8px rgba(0,0,0,0.2);
-    cursor: pointer;
-    z-index: 101; 
-    
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-
-.barre-superieure.header-scrolled:not(:hover)::before {
-    opacity: 1;
-    pointer-events: auto;
-    transition-delay: 0.4s; 
 }
